@@ -28,3 +28,5 @@ def draw() :
   """
   pyxel.cls(0)
   pyxel.rect(plateau_x, 8, 8, 1)
+  pyxel.run(update, draw)
+
