@@ -7,7 +7,7 @@ pyxel.init(128, 128, title="Nuit du c0de")
 # position initiale du vaisseau
 # (origine des positions : coin haut gauche)
 vaisseau_x = 60
-vaisseau_y = 10
+vaisseau_y = 100
 
 def vaisseau_deplacement(x, y):
     """déplacement avec les touches de directions"""
@@ -20,6 +20,12 @@ def vaisseau_deplacement(x, y):
             x = x - 1
     return x, y
 
+def bloc(blocs_destructibles_liste) :
+  """faire une brique que la balle va détruire pour obtenir des points"""
+  if (pyxel.frame_count % 30 == 0) :
+    blocs_destructibles_liste.append([random.randint(0, 60), 0])
+  return blocs_destructibles_liste
+
 
 # =========================================================
 # == UPDATE
@@ -27,10 +33,11 @@ def vaisseau_deplacement(x, y):
 def update():
     """mise à jour des variables (30 fois par seconde)"""
 
-    global vaisseau_x, vaisseau_y
+    global vaisseau_x, vaisseau_y, blocs_destructibles_liste
 
     # mise à jour de la position du vaisseau
     vaisseau_x, vaisseau_y = vaisseau_deplacement(vaisseau_x, vaisseau_y)
+    blocs_destructibles_liste =  bloc
 
 
 # =========================================================
@@ -42,8 +49,11 @@ def draw():
     # vide la fenetre
     pyxel.cls(0)
 
-    # vaisseau (carre 8x8)
-    pyxel.rect(vaisseau_x, vaisseau_y, 12, 8, 1)
+    # vaisseau (rectangle 12x4)
+    pyxel.rect(vaisseau_x, vaisseau_y, 12, 4, 3)
+    
+    # bloc (4x4)
+    pyxel.rect(bloc[0], bloc[1], 4, 4, 8)
 
 pyxel.run(update, draw)
 
