@@ -30,7 +30,7 @@ def update():
     global vaisseau_x, vaisseau_y
 
     # mise à jour de la position du vaisseau
-    vaisseau_x, vaisseau_y = vaisseau_deplacement(vaisseau_x, vaisseau_y)
+    vaisseau_x, vaisseau_y = vaisseau_deplacement(vaisseau_x)
 
 
 # =========================================================
