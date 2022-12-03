@@ -32,6 +32,7 @@ bloc10_x = 100
 bloc10_y = 5
 bloc11_x = 110
 bloc11_y = 5
+bloc_liste = [5, 15]
 
 
 
@@ -81,6 +82,7 @@ def draw():
     pyxel.rect(bloc9_x, bloc9_y, 7, 7, 8)
     pyxel.rect(bloc10_x, bloc10_y, 7, 7, 8)
     pyxel.rect(bloc11_x, bloc11_y, 7, 7, 8)
+    pyxel.rect(bloc_liste, 7, 7, 8)
 
 pyxel.run(update, draw)
 
