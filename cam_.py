@@ -31,10 +31,10 @@ def plateau_deplacement(x, y):
 def update():
     """mise à jour des variables (30 fois par seconde)"""
 
-    global vaisseau_x, vaisseau_y
+    global plateau_x, plateau_y
 
     # mise à jour de la position du vaisseau
-    vaisseau_x, vaisseau_y = vaisseau_deplacement(vaisseau_x, vaisseau_y)
+    plateau_x, plateau_y = plateau_deplacement(plateau_x, plateau_y)
 
 
 # =========================================================
@@ -47,7 +47,7 @@ def draw():
     pyxel.cls(0)
 
     # vaisseau (carre 8x8)
-    pyxel.rect(vaisseau_x, vaisseau_y, 8, 8, 1)
+    pyxel.rect(plateau_x, plateau_y, 8, 8, 1)
 
 pyxel.run(update, draw)
 
