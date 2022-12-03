@@ -9,7 +9,7 @@ pyxel.init(128, 128, title="Nuit du c0de")
 plateau_x = 60
 plateau_y = 60
 
-def plateau_deplacement(x, y):
+def plateau_deplacement(x):
     """déplacement avec les touches de directions"""
 
     if pyxel.btn(pyxel.KEY_RIGHT):
@@ -18,7 +18,7 @@ def plateau_deplacement(x, y):
     if pyxel.btn(pyxel.KEY_LEFT):
         if (x > 0) :
             x = x - 1
-    return x, y
+    return x
 
 
 # =========================================================
