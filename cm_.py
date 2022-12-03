@@ -18,9 +18,9 @@ def plateau_deplacement(x, y):
     if pyxel.btn(pyxel.KEY_LEFT):
         if (x > 0) :
             x = x - 1
-    if (y > 0) :
-        y = y - 1
     if (y < 0) :
+        y = y - 1
+    if (y > 0) :
         y = y + 1
     return x, y
 
