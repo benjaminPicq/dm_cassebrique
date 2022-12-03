@@ -9,7 +9,7 @@ pyxel.init(128, 128, title="Nuit du c0de")
 plateau_x = 60
 plateau_y = 60
 
-def plateau_deplacement(x):
+def plateau_deplacement(x, y):
     """déplacement avec les touches de directions"""
 
     if pyxel.btn(pyxel.KEY_RIGHT):
@@ -18,7 +18,11 @@ def plateau_deplacement(x):
     if pyxel.btn(pyxel.KEY_LEFT):
         if (x > 0) :
             x = x - 1
-    return x
+    if (y > 0) :
+        y = y - 1
+    if (y < 0) :
+        y = y + 1
+    return x, y
 
 
 # =========================================================
@@ -30,7 +34,7 @@ def update():
     global vaisseau_x, vaisseau_y
 
     # mise à jour de la position du vaisseau
-    vaisseau_x, vaisseau_y = vaisseau_deplacement(vaisseau_x)
+    vaisseau_x, vaisseau_y = vaisseau_deplacement(vaisseau_x, vaisseau_y)
 
 
 # =========================================================
