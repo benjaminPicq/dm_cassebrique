@@ -7,13 +7,19 @@ pyxel.init(128, 128, title="Nuit du c0de")
 # position initiale du vaisseau
 # (origine des positions : coin haut gauche)
 plateau_x = 60
-plateau_y = 30
+plateau_y = 90
 
 #initialisation blocs
-bloc1_x = 5
-bloc1_y = 115
-
-
+bloc1_x = 10
+bloc1_y = 5
+bloc2_x = 20
+bloc2_y = 5
+bloc3_x = 30
+bloc3_y = 5
+bloc4_x = 40
+bloc4_y = 5
+bloc5_x = 50
+bloc5_y = 5
 
 def plateau_deplacement(x, y):
     """déplacement avec les touches de directions"""
@@ -46,11 +52,15 @@ def draw():
     # vide la fenetre
     pyxel.cls(0)
 
-    # vaisseau (carre 8x8)
+    # vaisseau (rectangle 12x4)
     pyxel.rect(plateau_x, plateau_y, 12, 4, 3)
     
-    # bloc 1 (3x3)
-    pyxel.rect(bloc1_x, bloc1_y, 3, 3, 8)
+    # blocs (7x7)
+    pyxel.rect(bloc1_x, bloc1_y, 7, 7, 8)
+    pyxel.rect(bloc2_x, bloc2_y, 7, 7, 8)
+    pyxel.rect(bloc3_x, bloc3_y, 7, 7, 8)
+    pyxel.rect(bloc4_x, bloc4_y, 7, 7, 8)
+    pyxel.rect(bloc5_x, bloc5_y, 7, 7, 8)
 
 pyxel.run(update, draw)
 
