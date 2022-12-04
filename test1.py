@@ -13,7 +13,7 @@ def plateau_deplacement(x, y):
             x = x - 4
     return x, y
   
-  def update() :
+ def update() :
     
     global plateau_x, plateau_y
     
