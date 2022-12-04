@@ -41,29 +41,30 @@ def balle_deplacement(x, y) :
     if  215 <= y <= (238):
         if (plateau_x -20) <= x < (plateau_x):
             balle_y = balle_y + 5
-            xballe_speed = -xballe_speed #*1.015
-            yballe_speed = -yballe_speed #*1.015
+            xballe_speed = -xballe_speed
+            yballe_speed = -yballe_speed
         elif plateau_x <= x <= (plateau_x +55):
             balle_y = balle_y + 5
-            xballe_speed = xballe_speed #*1.015
-            yballe_speed = -yballe_speed #*1.015
-    if balle_y == exbtom and exleft <= balle_x <= exright: #rebond contre brique au-dessus
-        xballe_speed = xballe_speed
-        yballe_speed = -yballe_speed
-    if balle_y == extop and exleft <= balle_x <= exright: #rebond contre brique en-dessous
-        xballe_speed = xballe_speed
-        yballe_speed = -yballe_speed
-    if balle_x == exleft and extop <= y <= exbtom: #rebond contre brique gauche
-        xballe_speed = xballe_speed
-        yballe_speed = -yballe_speed
-    if balle_x == exright and extop <= y <= exbtom: #rebond contre brique droite
+            xballe_speed = xballe_speed 
+            yballe_speed = -yballe_speed
+    if ball_x == exright and extop <= y <= exbtom: 
         xballe_speed = -xballe_speed
-        yballe_speed = yballe_speed
+        yballe_speed = yballe_speed      
+    if balle_x == exleft and extop <= y <= exbtom: 
+        xballe_speed = xballe_speed
+        yballe_Speed = -yballe_speed
+    if balle_y == extop and exleft <= balle_x <= exright: 
+        xballe_speed = xballe_speed
+        yballe_speed = -yballe_speed
+    if balle_y == exbtom and exleft <= balle_x <= exright:  
+        xballe_speed = xballe_speed
+        yballe_speed = -yballe_speed
     else:
         xballe_speed = xballe_speed
         yballe_speed = yballe_speed
     
     return x, y
+
 
 # =========================================================
 # == UPDATE
