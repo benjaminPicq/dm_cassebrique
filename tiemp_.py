@@ -31,14 +31,14 @@ def balle_deplacement(x, y) :
     global xballe_speed, yballe_speed, plateau_x, plateau_y, balle_x, balle_y, exleft, exright, exbtom, extop
     x -= xballe_speed
     y -= yballe_speed
-    if (x < 2) or (x > 118) :
+    if (x < 2) or (x > 123) :
         xballe_speed = -xballe_speed
         yballe_speed = yballe_speed
     elif (y < 2) :
         xballe_speed = xballe_speed
         balle_y = balle_y - 2
         yballe_speed = -yballe_speed
-    if  84 <= y <= (107) :
+    if 107 <= y <= (119) :
         if (plateau_x -10) <= x < (plateau_x) :
             balle_y = balle_y + 2
             xballe_speed = -xballe_speed
