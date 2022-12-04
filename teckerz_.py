@@ -93,7 +93,7 @@ def draw():
         # polygone de 6 cotes
         pyxel.rect(plateau_x, plateau_y, 10, 5, 3)
         pyxel.tri(plateau_x, plateau_y, plateau_x, plateau_y+6, plateau_x-6, plateau_y+6, 3)
-        pyxel.tri(plateau_x+8, plateau_y, plateau_x+8, plateau_y+6.5, plateau_x+18, plateau_y+6.5, 3)
+        pyxel.tri(plateau_x, plateau_y, plateau_x, plateau_y+6, plateau_x+18, plateau_y+6, 3)
         pyxel.rect(plateau_x-6, plateau_y+6, 24.25, 4, 3)
     
         # premiere ligne de briques(x, y, 9x9, couleur)
