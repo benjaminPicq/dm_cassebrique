@@ -21,24 +21,22 @@ def plateau_deplacement(x, y):
             x = x - 1
     return x, y
 
-def bloc_creation(x, y) :
-    bloc = Bloc(x, y)
-    blocs.append(bloc)
-    return x, y
-
-for x in range(5, width - 8, 8) :
-    bloc_creation(x + 10, 20, 1)
+def bloc_creation(blocs) :
+    for x in range(10, 10) :
+        pyxel.rect(bloc[1], bloc[2], 7, 7, 8)   
+    return blocs
 # =========================================================
 # == UPDATE
 # =========================================================
 def update():
     """mise à jour des variables (30 fois par seconde)"""
 
-    global plateau_x, plateau_y
+    global plateau_x, plateau_y, blocs
 
     # mise à jour de la position du vaisseau
     plateau_x, plateau_y = plateau_deplacement(plateau_x, plateau_y)
-
+    
+    blocs = bloc_creation(blocs)
 # =========================================================
 # == DRAW
 # =========================================================
