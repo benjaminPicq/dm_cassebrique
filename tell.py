@@ -43,6 +43,6 @@ def draw():
     pyxel.rect(plateau_x, plateau_y, 20, 10, 3)
     pyxel.tri(plateau_x, plateau_y, plateau_x, plateau_y+11, plateau_x-11, plateau_y+11, 3)
     pyxel.tri(plateau_x+20, plateau_y, plateau_x+20, plateau_y+11, plateau_x+31, plateau_y+11, 3)
-    pyxel.rect(plateau_x-11, plateau_y+11, 63, 4, 3)
+    pyxel.rect(plateau_x-11, plateau_y+11, 33, 4, 3)
 
 pyxel.run(update, draw)
