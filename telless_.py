@@ -1,4 +1,5 @@
 import pyxel
+import time
 
 # taille de la fenetre 128x128 pixels
 # ne pas modifier
@@ -10,6 +11,27 @@ plateau_x = 60
 plateau_y = 110
 balle_x = random.radint(0,120)
 balle_y = 50
+xballe_speed = 2
+yball_speed = 2
+exleft = 38
+exright = 218
+extop = 62
+exbtom = 104
+temps = 0
+
+while temps >= 0 :
+        time.sleep(1)
+        temps = temps + 1
+
+if temps >= 10 :
+        xball_speed = 4
+        yball_speed = 4
+elif temps >= 20 : 
+        xball_speed = 6
+        yball_speed = 6
+elif temps >= 30 :
+        xball_speed = 8
+        yball_speed = 8
 
 def plateau_deplacement(x, y):
     """déplacement avec les touches de directions"""
@@ -22,9 +44,43 @@ def plateau_deplacement(x, y):
             x = x - 1
     return x, y
 
-while temps >= 0 :
-    wait 1s
-    temps = temps + 1
+def ball_movement(x, y) :
+    x -= xball_speed
+    y -= yball_speed
+    if  215 <= y <= (238):
+        if (vaisseau_x -20) <= x < (vaisseau_x):
+            ball_y = ball_y + 5
+            xball_speed = -xball_speed#*1.015
+            yball_speed = -yball_speed#*1.015
+        elif vaisseau_x <= x <= (vaisseau_x +55):
+            ball_y = ball_y + 5
+            xball_speed = xball_speed #*1.015
+            yball_speed = -yball_speed#*1.015
+    if (x < 5) or (x > 246):
+        xball_speed = -xball_speed
+        yball_speed = yball_speed
+    elif (y < 5):
+        xball_speed = xball_speed
+        ball_y = ball_y - 5
+        yball_speed = -yball_speed
+    if ball_y == exbtom and exleft <= ball_x <= exright: #rebond contre brique au-dessus
+        xball_speed = xball_speed
+        yball_speed = -yball_speed
+    if ball_y == extop and exleft <= ball_x <= exright: #rebond contre brique en-dessous
+        xball_speed = xball_speed
+        yball_speed = -yball_speed
+    if ball_x == exleft and extop <= y <= exbtom: #rebond contre brique gauche
+        xball_speed = xball_speed
+        yball_Speed = -yball_speed
+    if ball_x == exright and extop <= y <= exbtom: #rebond contre brique droite
+        xball_speed = -xball_speed
+        yball_speed = yball_speed
+    else:
+        xball_speed = xball_speed
+        yball_speed = yball_speed
+    
+    return x, y
+
 # =========================================================
 # == UPDATE
 # =========================================================
