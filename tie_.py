@@ -88,7 +88,7 @@ def draw():
     # vide la fenetre
     pyxel.cls(0)
     
-    if balle_y >= 128 :
+    if balle_x >= 128 :
         
         # polygone de 6 cotes
         pyxel.rect(plateau_x, plateau_y, 20, 10, 3)
