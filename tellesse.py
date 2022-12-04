@@ -7,10 +7,10 @@ pyxel.init(128, 128, title="Nuit du c0de")
 # (origine des positions : coin haut gauche)
 plateau_x = 60
 plateau_y = 110
-balle_x = random.radint(0,120)
-balle_y = 50
+balle_x = 60
+balle_y = 60
 xballe_speed = 2
-yball_speed = 2
+yballe_speed = 2
 exleft = 38
 exright = 218
 extop = 62
@@ -22,14 +22,14 @@ while temps >= 0 :
         temps = temps + 1
 
 if temps >= 10 :
-        xball_speed = 4
-        yball_speed = 4
+        xballe_speed = 4
+        yballe_speed = 4
 elif temps >= 20 : 
-        xball_speed = 6
-        yball_speed = 6
+        xballe_speed = 6
+        yballe_speed = 6
 elif temps >= 30 :
-        xball_speed = 8
-        yball_speed = 8
+        xballe_speed = 8
+        yballe_speed = 8
 
 def plateau_deplacement(x, y):
     """déplacement avec les touches de directions"""
@@ -42,40 +42,40 @@ def plateau_deplacement(x, y):
             x = x - 1
     return x, y
 
-def ball_movement(x, y) :
-    x -= xball_speed
-    y -= yball_speed
+def balle_deplacement(x, y) :
+    x -= xballe_speed
+    y -= yballe_speed
     if  215 <= y <= (238):
-        if (vaisseau_x -20) <= x < (vaisseau_x):
-            ball_y = ball_y + 5
-            xball_speed = -xball_speed#*1.015
-            yball_speed = -yball_speed#*1.015
-        elif vaisseau_x <= x <= (vaisseau_x +55):
-            ball_y = ball_y + 5
-            xball_speed = xball_speed #*1.015
-            yball_speed = -yball_speed#*1.015
+        if (plateau_x -20) <= x < (plateau_x):
+            balle_y = balle_y + 5
+            xballe_speed = -xballe_speed#*1.015
+            yballe_speed = -yballe_speed#*1.015
+        elif plateau_x <= x <= (plateau_x +55):
+            balle_y = balle_y + 5
+            xballe_speed = xballe_speed #*1.015
+            yballe_speed = -yballe_speed#*1.015
     if (x < 5) or (x > 246):
-        xball_speed = -xball_speed
-        yball_speed = yball_speed
+        xballe_speed = -xballe_speed
+        yballe_speed = yballe_speed
     elif (y < 5):
-        xball_speed = xball_speed
-        ball_y = ball_y - 5
-        yball_speed = -yball_speed
-    if ball_y == exbtom and exleft <= ball_x <= exright: #rebond contre brique au-dessus
-        xball_speed = xball_speed
-        yball_speed = -yball_speed
-    if ball_y == extop and exleft <= ball_x <= exright: #rebond contre brique en-dessous
-        xball_speed = xball_speed
-        yball_speed = -yball_speed
-    if ball_x == exleft and extop <= y <= exbtom: #rebond contre brique gauche
-        xball_speed = xball_speed
-        yball_Speed = -yball_speed
-    if ball_x == exright and extop <= y <= exbtom: #rebond contre brique droite
-        xball_speed = -xball_speed
-        yball_speed = yball_speed
+        xballe_speed = xballe_speed
+        balle_y = balle_y - 5
+        yballe_speed = -yballe_speed
+    if balle_y == exbtom and exleft <= balle_x <= exright: #rebond contre brique au-dessus
+        xballe_speed = xballe_speed
+        yballe_speed = -yballe_speed
+    if balle_y == extop and exleft <= balle_x <= exright: #rebond contre brique en-dessous
+        xballe_speed = xballe_speed
+        yballe_speed = -yballe_speed
+    if balle_x == exleft and extop <= y <= exbtom: #rebond contre brique gauche
+        xballe_speed = xballe_speed
+        yballe_speed = -yballe_speed
+    if balle_x == exright and extop <= y <= exbtom: #rebond contre brique droite
+        xballe_speed = -xballe_speed
+        yballe_speed = yballe_speed
     else:
-        xball_speed = xball_speed
-        yball_speed = yball_speed
+        xballe_speed = xballe_speed
+        yballe_speed = yballe_speed
     
     return x, y
 
@@ -85,10 +85,12 @@ def ball_movement(x, y) :
 def update():
     """mise à jour des variables (30 fois par seconde)"""
 
-    global plateau_x, plateau_y
+    global plateau_x, plateau_y, balle_x, balle_y
 
     # mise à jour de la position du vaisseau
     plateau_x, plateau_y = plateau_deplacement(plateau_x, plateau_y)
+        
+    balle_x, balle_y = balle_deplacement(balle_x, balle_y)
 
 # =========================================================
 # == DRAW
@@ -143,5 +145,7 @@ def draw():
     pyxel.rect(90, 25, 9, 9, 8)
     pyxel.rect(100, 25, 9, 9, 8)
     pyxel.rect(110, 25, 9, 9, 8)
+
+    pyxel.circ(balle_x, balle_y, 3, 2)
 
 pyxel.run(update, draw)
