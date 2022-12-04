@@ -91,10 +91,10 @@ def draw():
     if balle_y <= 128 :
         
         # polygone de 6 cotes
-        pyxel.rect(plateau_x, plateau_y, 20, 10, 3)
-        pyxel.tri(plateau_x, plateau_y, plateau_x, plateau_y+11, plateau_x-11, plateau_y+11, 3)
-        pyxel.tri(plateau_x+20, plateau_y, plateau_x+20, plateau_y+11, plateau_x+31, plateau_y+11, 3)
-        pyxel.rect(plateau_x-11, plateau_y+11, 43, 4, 3)
+        pyxel.rect(plateau_x, plateau_y, 10, 5, 3)
+        pyxel.tri(plateau_x, plateau_y, plateau_x, plateau_y+6, plateau_x-6, plateau_y+6, 3)
+        pyxel.tri(plateau_x+10, plateau_y, plateau_x+10, plateau_y+6, plateau_x+21, plateau_y+6, 3)
+        pyxel.rect(plateau_x-6, plateau_y+6, 22, 4, 3)
     
         # premiere ligne de briques(x, y, 9x9, couleur)
         pyxel.rect(10, 5, 9, 9, 8)
