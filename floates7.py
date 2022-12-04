@@ -15,8 +15,6 @@ exleft = 19
 exright = 109
 extop = 31
 exbtom = 52
-briques_x = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110]
-briques_y = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
 
 def plateau_deplacement(x, y):
     """déplacement avec les touches de directions"""
@@ -53,14 +51,13 @@ def balle_deplacement(x, y) :
     
     return x, y
 
-
 # =========================================================
 # == UPDATE
 # =========================================================
 def update():
     """mise à jour des variables (30 fois par seconde)"""
 
-    global plateau_x, plateau_y, balle_x, balle_y
+    global plateau_x, plateau_y, balle_x, balle_y, brique1_x, brique1_y
 
     # mise à jour de la position du vaisseau
     plateau_x, plateau_y = plateau_deplacement(plateau_x, plateau_y)
@@ -85,10 +82,43 @@ def draw():
         pyxel.rect(plateau_x-15, plateau_y+15, 47, 4, 3)
     
         # premiere ligne de briques(x, y, 9x9, couleur)
-        for i in range(0, 11) :   
-            b = briques_x
-            c = briques_y
-            pyxel.rect(b, c, 9, 9, 8)
+        pyxel.rect(10, 5, 9, 9, 8)
+        pyxel.rect(20, 5, 9, 9, 8)
+        pyxel.rect(30, 5, 9, 9, 8)
+        pyxel.rect(40, 5, 9, 9, 8)
+        pyxel.rect(50, 5, 9, 9, 8)
+        pyxel.rect(60, 5, 9, 9, 8)
+        pyxel.rect(70, 5, 9, 9, 8)
+        pyxel.rect(80, 5, 9, 9, 8)
+        pyxel.rect(90, 5, 9, 9, 8)
+        pyxel.rect(100, 5, 9, 9, 8)
+        pyxel.rect(110, 5, 9, 9, 8)
+        
+        # deuxieme ligne de briques
+        pyxel.rect(10, 15, 9, 9, 8)
+        pyxel.rect(20, 15, 9, 9, 8)
+        pyxel.rect(30, 15, 9, 9, 8)
+        pyxel.rect(40, 15, 9, 9, 8)
+        pyxel.rect(50, 15, 9, 9, 8)
+        pyxel.rect(60, 15, 9, 9, 8)
+        pyxel.rect(70, 15, 9, 9, 8)
+        pyxel.rect(80, 15, 9, 9, 8)
+        pyxel.rect(90, 15, 9, 9, 8)
+        pyxel.rect(100, 15, 9, 9, 8)
+        pyxel.rect(110, 15, 9, 9, 8)
+        
+        # troisieme ligne de briques
+        pyxel.rect(10, 25, 9, 9, 8)
+        pyxel.rect(20, 25, 9, 9, 8)
+        pyxel.rect(30, 25, 9, 9, 8)
+        pyxel.rect(40, 25, 9, 9, 8)
+        pyxel.rect(50, 25, 9, 9, 8)
+        pyxel.rect(60, 25, 9, 9, 8)
+        pyxel.rect(70, 25, 9, 9, 8)
+        pyxel.rect(80, 25, 9, 9, 8)
+        pyxel.rect(90, 25, 9, 9, 8)
+        pyxel.rect(100, 25, 9, 9, 8)
+        pyxel.rect(110, 25, 9, 9, 8)
 
         pyxel.circ(balle_x, balle_y, 3, 10)
         
