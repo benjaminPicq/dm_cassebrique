@@ -1,6 +1,4 @@
-import pyxel
-import time
-
+import pyxel, time, random
 # taille de la fenetre 128x128 pixels
 # ne pas modifier
 pyxel.init(128, 128, title="Nuit du c0de")
