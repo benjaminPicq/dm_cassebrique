@@ -8,8 +8,6 @@ pyxel.init(128, 128, title="Nuit du c0de")
 # (origine des positions : coin haut gauche)
 plateau_x = 60
 plateau_y = 90
-balle_x = 60
-balle_y = 85
 
 def plateau_deplacement(x, y):
     """déplacement avec les touches de directions"""
@@ -41,7 +39,7 @@ def draw():
     # vide la fenetre
     pyxel.cls(0)
 
-    # plateau (polygone de 6 côtés 20x4)
+    # plateau (polygone de 6 côtés)
     pyxel.rect(plateau_x, plateau_y, 32, 14, 3)
     pyxel.tri(plateau_x, plateau_y, plateau_x, plateau_y+15, plateau_x-15, plateau_y+15, 3)
     pyxel.tri(plateau_x+32, plateau_y, plateau_x+32, plateau_y+15, plateau_x+47, plateau_y+15,)
