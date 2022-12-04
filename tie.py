@@ -18,7 +18,7 @@ exbtom = 104
 
 def plateau_deplacement(x, y):
     """déplacement avec les touches de directions"""
-
+    
     if pyxel.btn(pyxel.KEY_RIGHT):
         if (x < 120) :
             x = x + 1
@@ -28,6 +28,7 @@ def plateau_deplacement(x, y):
     return x, y
 
 def balle_deplacement(x, y) :
+    global xballe_speed, yballe_speed, plateau_x, plateau_y, balle_x, balle_y, exleft, exright, exbtom, extop
     x -= xballe_speed
     y -= yballe_speed
     if (x < 5) or (x > 246):
