@@ -39,11 +39,11 @@ def balle_deplacement(x, y) :
         balle_y = balle_y - 5
         yballe_speed = -yballe_speed
     if  107 <= y <= (119):
-        if (plateau_x -20) <= x < (plateau_x) or (plateau_x + 22) < x <= (plateau_x + 45):
+        if (plateau_x -20) <= x < (plateau_x) or (plateau_x + 15) < x <= (plateau_x + 35):
             balle_y = balle_y + 5
             xballe_speed = -xballe_speed
             yballe_speed = -yballe_speed
-        elif plateau_x <= x <= (plateau_x +22):
+        elif plateau_x <= x <= (plateau_x +15):
             balle_y = balle_y + 5
             xballe_speed = xballe_speed 
             yballe_speed = -yballe_speed 
@@ -82,7 +82,7 @@ def draw():
         pyxel.rect(plateau_x, plateau_y, 16, 10, 3)
         pyxel.tri(plateau_x, plateau_y, plateau_x, plateau_y+15, plateau_x-15, plateau_y+15, 3)
         pyxel.tri(plateau_x+16, plateau_y, plateau_x+16, plateau_y+15, plateau_x+31, plateau_y+15, 3)
-        pyxel.rect(plateau_x-15, plateau_y+15, 43, 4, 3)
+        pyxel.rect(plateau_x-15, plateau_y+15, 47, 4, 3)
     
         # premiere ligne de briques(x, y, 9x9, couleur)
         pyxel.rect(10, 5, 9, 9, 8)
