@@ -1,4 +1,4 @@
-import pyxel, time, random
+import pyxel, random
 # taille de la fenetre 128x128 pixels
 # ne pas modifier
 pyxel.init(128, 128, title="Nuit du c0de")
@@ -8,28 +8,13 @@ pyxel.init(128, 128, title="Nuit du c0de")
 plateau_x = 60
 plateau_y = 110
 balle_x = 60
-balle_y = 60
+balle_y = 50
 xballe_speed = 2
 yballe_speed = 2
 exleft = 38
 exright = 218
 extop = 62
 exbtom = 104
-temps = 0
-
-while temps >= 0 :
-        time.sleep(1)
-        temps = temps + 1
-
-if temps >= 10 :
-        xballe_speed = 4
-        yballe_speed = 4
-elif temps >= 20 : 
-        xballe_speed = 6
-        yballe_speed = 6
-elif temps >= 30 :
-        xballe_speed = 8
-        yballe_speed = 8
 
 def plateau_deplacement(x, y):
     """déplacement avec les touches de directions"""
@@ -45,15 +30,6 @@ def plateau_deplacement(x, y):
 def balle_deplacement(x, y) :
     x -= xballe_speed
     y -= yballe_speed
-    if  215 <= y <= (238):
-        if (plateau_x -20) <= x < (plateau_x):
-            balle_y = balle_y + 5
-            xballe_speed = -xballe_speed#*1.015
-            yballe_speed = -yballe_speed#*1.015
-        elif plateau_x <= x <= (plateau_x +55):
-            balle_y = balle_y + 5
-            xballe_speed = xballe_speed #*1.015
-            yballe_speed = -yballe_speed#*1.015
     if (x < 5) or (x > 246):
         xballe_speed = -xballe_speed
         yballe_speed = yballe_speed
@@ -61,6 +37,15 @@ def balle_deplacement(x, y) :
         xballe_speed = xballe_speed
         balle_y = balle_y - 5
         yballe_speed = -yballe_speed
+    if  215 <= y <= (238):
+        if (plateau_x -20) <= x < (plateau_x):
+            balle_y = balle_y + 5
+            xballe_speed = -xballe_speed #*1.015
+            yballe_speed = -yballe_speed #*1.015
+        elif plateau_x <= x <= (plateau_x +55):
+            balle_y = balle_y + 5
+            xballe_speed = xballe_speed #*1.015
+            yballe_speed = -yballe_speed #*1.015
     if balle_y == exbtom and exleft <= balle_x <= exright: #rebond contre brique au-dessus
         xballe_speed = xballe_speed
         yballe_speed = -yballe_speed
