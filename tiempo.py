@@ -9,12 +9,12 @@ plateau_x = 60
 plateau_y = 110
 balle_x = 60
 balle_y = 50
-xballe_speed = 5
-yballe_speed = 5
-exleft = 38
-exright = 218
-extop = 62
-exbtom = 104
+xballe_speed = 3
+yballe_speed = 3
+exleft = 19
+exright = 109
+extop = 31
+exbtom = 52
 
 def plateau_deplacement(x, y):
     """déplacement avec les touches de directions"""
@@ -133,6 +133,6 @@ def draw():
     pyxel.rect(100, 25, 9, 9, 8)
     pyxel.rect(110, 25, 9, 9, 8)
 
-    pyxel.circ(balle_x, balle_y, 5, 10)
+    pyxel.circ(balle_x, balle_y, 4, 10)
 
 pyxel.run(update, draw)
