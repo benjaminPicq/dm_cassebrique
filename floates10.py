@@ -31,25 +31,28 @@ def balle_deplacement(x, y) :
     global xballe_speed, yballe_speed, plateau_x, plateau_y, balle_x, balle_y, exleft, exright, exbtom, extop
     x -= xballe_speed
     y -= yballe_speed
-    if (x < 5) or (x > 123) :
+    if (x < 5) or (x > 123):
         xballe_speed = -xballe_speed
         yballe_speed = yballe_speed
-    elif (y < 5) :
+    elif (y < 5):
         xballe_speed = xballe_speed
         balle_y = balle_y - 5
         yballe_speed = -yballe_speed
-    if  107 <= y <= (119) :
-        if (plateau_x -20) <= x < (plateau_x) or (plateau_x + 25) < x <= (plateau_x + 35) :
+    if  107 <= y <= (119):
+        if (plateau_x -20) <= x < (plateau_x) or (plateau_x + 15) < x <= (plateau_x + 35):
             balle_y = balle_y + 5
             xballe_speed = -xballe_speed
             yballe_speed = -yballe_speed
-        elif plateau_x <= x <= (plateau_x +25) :
+        elif plateau_x <= x <= (plateau_x +15):
             balle_y = balle_y + 5
-        else :
             xballe_speed = xballe_speed 
-            yballe_speed = -yballe_speed
+            yballe_speed = -yballe_speed 
+    else:
+        xballe_speed = xballe_speed
+        yballe_speed = yballe_speed
     
     return x, y
+
 
 # =========================================================
 # == UPDATE
@@ -57,7 +60,7 @@ def balle_deplacement(x, y) :
 def update():
     """mise à jour des variables (30 fois par seconde)"""
 
-    global plateau_x, plateau_y, balle_x, balle_y, brique1_x, brique1_y
+    global plateau_x, plateau_y, balle_x, balle_y
 
     # mise à jour de la position du vaisseau
     plateau_x, plateau_y = plateau_deplacement(plateau_x, plateau_y)
@@ -93,8 +96,8 @@ def draw():
         pyxel.rect(90, 5, 9, 9, 8)
         pyxel.rect(100, 5, 9, 9, 8)
         pyxel.rect(110, 5, 9, 9, 8)
-        
-        # deuxieme ligne de briques
+    
+        # deuxieme ligne de briques(x, y, 9x9, couleur)
         pyxel.rect(10, 15, 9, 9, 8)
         pyxel.rect(20, 15, 9, 9, 8)
         pyxel.rect(30, 15, 9, 9, 8)
@@ -106,8 +109,8 @@ def draw():
         pyxel.rect(90, 15, 9, 9, 8)
         pyxel.rect(100, 15, 9, 9, 8)
         pyxel.rect(110, 15, 9, 9, 8)
-        
-        # troisieme ligne de briques
+    
+        # troisieme ligne de briques(x, y, 9x9, couleur)
         pyxel.rect(10, 25, 9, 9, 8)
         pyxel.rect(20, 25, 9, 9, 8)
         pyxel.rect(30, 25, 9, 9, 8)
