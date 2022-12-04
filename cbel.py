@@ -38,8 +38,6 @@ def update():
 # =========================================================
 def draw():
     """création des objets (30 fois par seconde)"""
-    
-  global plateau_x, plateau_y, balle_x, balle_y 
 
     # vide la fenetre
     pyxel.cls(0)
