@@ -23,7 +23,7 @@ def plateau_deplacement(x, y):
 
 def bloc_creation(blocs) :
     for x in range(10, 10) :
-        pyxel.rect(bloc[1], bloc[2], 7, 7, 8)   
+        pyxel.rect(blocs[1], 7, 7, 8)   
     return blocs
 # =========================================================
 # == UPDATE
