@@ -42,7 +42,7 @@ def draw():
     # plateau (polygone de 6 côtés)
     pyxel.rect(plateau_x, plateau_y, 32, 14, 3)
     pyxel.tri(plateau_x, plateau_y, plateau_x, plateau_y+15, plateau_x-15, plateau_y+15, 3)
-    pyxel.tri(plateau_x+32, plateau_y, plateau_x+32, plateau_y+15, plateau_x+47, plateau_y+15,)
+    pyxel.tri(plateau_x+32, plateau_y, plateau_x+32, plateau_y+15, plateau_x+47, plateau_y+15, 3)
     
     # balle (cercle, rayon = 3, couleur)
     pyxel.circ(balle_x, balle_y, 3, 10)
