@@ -8,6 +8,8 @@ pyxel.init(128, 128, title="Nuit du c0de")
 # (origine des positions : coin haut gauche)
 plateau_x = 60
 plateau_y = 110
+balle_x = random.radint(0,120)
+balle_y = 50
 
 def plateau_deplacement(x, y):
     """déplacement avec les touches de directions"""
@@ -19,6 +21,10 @@ def plateau_deplacement(x, y):
         if (x > 0) :
             x = x - 1
     return x, y
+
+while temps >= 0 :
+    wait 1s
+    temps = temps + 1
 # =========================================================
 # == UPDATE
 # =========================================================
@@ -45,40 +51,43 @@ def draw():
     pyxel.tri(plateau_x+20, plateau_y, plateau_x+20, plateau_y+11, plateau_x+31, plateau_y+11, 3)
     pyxel.rect(plateau_x-11, plateau_y+11, 43, 4, 3)
     
-    pyxel.rect(10, 5, 7, 7, 8)
-    pyxel.rect(20, 5, 7, 7, 8)
-    pyxel.rect(30, 5, 7, 7, 8)
-    pyxel.rect(40, 5, 7, 7, 8)
-    pyxel.rect(50, 5, 7, 7, 8)
-    pyxel.rect(60, 5, 7, 7, 8)
-    pyxel.rect(70, 5, 7, 7, 8)
-    pyxel.rect(80, 5, 7, 7, 8)
-    pyxel.rect(90, 5, 7, 7, 8)
-    pyxel.rect(100, 5, 7, 7, 8)
-    pyxel.rect(110, 5, 7, 7, 8)
+    # premiere ligne de briques(x, y, 9x9, couleur)
+    pyxel.rect(10, 5, 9, 9, 8)
+    pyxel.rect(20, 5, 9, 9, 8)
+    pyxel.rect(30, 5, 9, 9, 8)
+    pyxel.rect(40, 5, 9, 9, 8)
+    pyxel.rect(50, 5, 9, 9, 8)
+    pyxel.rect(60, 5, 9, 9, 8)
+    pyxel.rect(70, 5, 9, 9, 8)
+    pyxel.rect(80, 5, 9, 9, 8)
+    pyxel.rect(90, 5, 9, 9, 8)
+    pyxel.rect(100, 5, 9, 9, 8)
+    pyxel.rect(110, 5, 9, 9, 8)
     
-    pyxel.rect(10, 15, 7, 7, 8)
-    pyxel.rect(20, 15, 7, 7, 8)
-    pyxel.rect(30, 15, 7, 7, 8)
-    pyxel.rect(40, 15, 7, 7, 8)
-    pyxel.rect(50, 15, 7, 7, 8)
-    pyxel.rect(60, 15, 7, 7, 8)
-    pyxel.rect(70, 15, 7, 7, 8)
-    pyxel.rect(80, 15, 7, 7, 8)
-    pyxel.rect(90, 15, 7, 7, 8)
-    pyxel.rect(100, 15, 7, 7, 8)
-    pyxel.rect(110, 15, 7, 7, 8)
+    # deuxieme ligne de briques(x, y, 9x9, couleur)
+    pyxel.rect(10, 15, 9, 9, 8)
+    pyxel.rect(20, 15, 9, 9, 8)
+    pyxel.rect(30, 15, 9, 9, 8)
+    pyxel.rect(40, 15, 9, 9, 8)
+    pyxel.rect(50, 15, 9, 9, 8)
+    pyxel.rect(60, 15, 9, 9, 8)
+    pyxel.rect(70, 15, 9, 9, 8)
+    pyxel.rect(80, 15, 9, 9, 8)
+    pyxel.rect(90, 15, 9, 9, 8)
+    pyxel.rect(100, 15, 9, 9, 8)
+    pyxel.rect(110, 15, 9, 9, 8)
     
-    pyxel.rect(10, 25, 7, 7, 8)
-    pyxel.rect(20, 25, 7, 7, 8)
-    pyxel.rect(30, 25, 7, 7, 8)
-    pyxel.rect(40, 25, 7, 7, 8)
-    pyxel.rect(50, 25, 7, 7, 8)
-    pyxel.rect(60, 25, 7, 7, 8)
-    pyxel.rect(70, 25, 7, 7, 8)
-    pyxel.rect(80, 25, 7, 7, 8)
-    pyxel.rect(90, 25, 7, 7, 8)
-    pyxel.rect(100, 25, 7, 7, 8)
-    pyxel.rect(110, 25, 7, 7, 8)
+    # troisieme ligne de briques(x, y, 9x9, couleur)
+    pyxel.rect(10, 25, 9, 9, 8)
+    pyxel.rect(20, 25, 9, 9, 8)
+    pyxel.rect(30, 25, 9, 9, 8)
+    pyxel.rect(40, 25, 9, 9, 8)
+    pyxel.rect(50, 25, 9, 9, 8)
+    pyxel.rect(60, 25, 9, 9, 8)
+    pyxel.rect(70, 25, 9, 9, 8)
+    pyxel.rect(80, 25, 9, 9, 8)
+    pyxel.rect(90, 25, 9, 9, 8)
+    pyxel.rect(100, 25, 9, 9, 8)
+    pyxel.rect(110, 25, 9, 9, 8)
 
 pyxel.run(update, draw)
