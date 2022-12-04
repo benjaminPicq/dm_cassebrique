@@ -86,7 +86,9 @@ def draw():
     
         # premiere ligne de briques(x, y, 9x9, couleur)
         for i in range(11) :   
-            pyxel.rect(briques_x, briques_y, 9, 9, 8)
+            b = briques_x
+            c = briques_y
+            pyxel.rect(b, c, 9, 9, 8)
 
         pyxel.circ(balle_x, balle_y, 3, 10)
         
