@@ -9,8 +9,8 @@ plateau_x = 60
 plateau_y = 110
 balle_x = 60
 balle_y = 50
-xballe_speed = 2
-yballe_speed = 2
+xballe_speed = 5
+yballe_speed = 5
 exleft = 38
 exright = 218
 extop = 62
@@ -133,6 +133,6 @@ def draw():
     pyxel.rect(100, 25, 9, 9, 8)
     pyxel.rect(110, 25, 9, 9, 8)
 
-    pyxel.circ(balle_x, balle_y, 3, 2)
+    pyxel.circ(balle_x, balle_y, 5, 10)
 
 pyxel.run(update, draw)
