@@ -57,7 +57,7 @@ def balle_deplacement(x, y) :
 def blocs_creation(blocs) :
     """création aléatoire des blocs"""
     for b in range(5) :
-        blocs.append([random.randint(0, 120), 0])
+        blocs.append([random.randint(0, 120), 10])
     return blocs
 # =========================================================
 # == UPDATE
