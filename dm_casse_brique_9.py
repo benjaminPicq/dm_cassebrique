@@ -104,7 +104,7 @@ def draw():
         
         for l in briques_x1 and briques_y1 :
             for i in range(3) :
-                pyxel.rect(l[0], l[1], l[2], l[3], l[4], l[5], l[6], l[7], l[8], l[9], l[10] 9, 9, couleur1)
+                pyxel.rect(l[0], l[1], l[2], l[3], l[4], l[5], l[6], l[7], l[8], l[9], l[10], 9, 9, couleur1)
 
     else :
         pyxel.text(50,64, 'GAME OVER', 12)
