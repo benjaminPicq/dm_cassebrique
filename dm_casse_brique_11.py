@@ -16,7 +16,6 @@ exright = 109
 extop = 31
 exbtom = 52
 blocs = []
-couleur1 = 8
 
 def plateau_deplacement(x, y):
     """déplacement avec les touches de directions"""
@@ -55,9 +54,9 @@ def balle_deplacement(x, y) :
     
     return x, y
 
-def blocs_creation(blocs):
+def blocs_creation(blocs) :
     """création aléatoire des blocs"""
-    for b in range(5)
+    for b in range(5) :
         blocs.append([random.randint(0, 120), 0, 30])
     return blocs
 # =========================================================
@@ -92,7 +91,7 @@ def draw():
         pyxel.tri(plateau_x+16, plateau_y, plateau_x+16, plateau_y+15, plateau_x+31, plateau_y+15, 3)
         pyxel.rect(plateau_x-15, plateau_y+15, 47, 4, 3)
     
-
+        # balle de rayon 3
         pyxel.circ(balle_x, balle_y, 3, 10)
         
         for bloc in blocs :
