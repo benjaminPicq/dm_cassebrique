@@ -62,7 +62,7 @@ def balle_deplacement(x, y) :
 
 def briques_creation(briques_x1, briques_y1) :
     for l in range(33) :
-            briques_x1.append((0, 120), 10])
+            briques_x1.append((0, 120), 10)
             briques_y1.append([(5, 25), 10])
     if briques_x1 >= 120 or briques_y1 <= 0 :
         briques.remove(len(l))
