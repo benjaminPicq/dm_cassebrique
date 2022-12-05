@@ -66,9 +66,7 @@ def briques_creation(briques_x1, briques_y1) :
             briques_y1.append([(5, 25), 10])
     if briques_x1 >= 120 or briques_y1 <= 0 :
         briques.remove(len(l))
-    return briques_x1, briques_y1
-
-def 
+    return briques_x1, briques_y1 
 # =========================================================
 # == UPDATE
 # =========================================================
