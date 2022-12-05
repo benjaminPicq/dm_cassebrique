@@ -15,6 +15,13 @@ exleft = 19
 exright = 109
 extop = 31
 exbtom = 52
+briques_x1 = []
+briques_y1 = []
+briques_x2 = []
+briques_y2 = []
+briques_x3 = []
+briques_y3 = []
+couleur1 = 8
 
 def plateau_deplacement(x, y):
     """déplacement avec les touches de directions"""
@@ -46,14 +53,24 @@ def balle_deplacement(x, y) :
         elif plateau_x <= x <= (plateau_x +15):
             balle_y = balle_y + 5
             xballe_speed = xballe_speed 
-            yballe_speed = -yballe_speed 
+            yballe_speed = -yballe_speed
     else:
         xballe_speed = xballe_speed
         yballe_speed = yballe_speed
     
     return x, y
 
-
+def briques_creation(x, y) :
+    briques_x1.append(10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110)
+    briques_y1.append(5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5)
+    pyxel.rect(briques_x1, briques_y1, 9, 9, couleur1)
+    briques_x2.append(10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110)
+    briques_y2.append(15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15)
+    pyxel.rect(briques_x1, briques_y1, 9, 9, couleur1) 
+    briques_x3.append(10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110)
+    briques_y3.append(25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25)
+    pyxel.rect(briques_x3, briques_y3, 9, 9, couleur1)
+    return x, y
 # =========================================================
 # == UPDATE
 # =========================================================
@@ -84,44 +101,6 @@ def draw():
         pyxel.tri(plateau_x+16, plateau_y, plateau_x+16, plateau_y+15, plateau_x+31, plateau_y+15, 3)
         pyxel.rect(plateau_x-15, plateau_y+15, 47, 4, 3)
     
-        # premiere ligne de briques(x, y, 9x9, couleur)
-        pyxel.rect(10, 5, 9, 9, 8)
-        pyxel.rect(20, 5, 9, 9, 8)
-        pyxel.rect(30, 5, 9, 9, 8)
-        pyxel.rect(40, 5, 9, 9, 8)
-        pyxel.rect(50, 5, 9, 9, 8)
-        pyxel.rect(60, 5, 9, 9, 8)
-        pyxel.rect(70, 5, 9, 9, 8)
-        pyxel.rect(80, 5, 9, 9, 8)
-        pyxel.rect(90, 5, 9, 9, 8)
-        pyxel.rect(100, 5, 9, 9, 8)
-        pyxel.rect(110, 5, 9, 9, 8)
-    
-        # deuxieme ligne de briques(x, y, 9x9, couleur)
-        pyxel.rect(10, 15, 9, 9, 8)
-        pyxel.rect(20, 15, 9, 9, 8)
-        pyxel.rect(30, 15, 9, 9, 8)
-        pyxel.rect(40, 15, 9, 9, 8)
-        pyxel.rect(50, 15, 9, 9, 8)
-        pyxel.rect(60, 15, 9, 9, 8)
-        pyxel.rect(70, 15, 9, 9, 8)
-        pyxel.rect(80, 15, 9, 9, 8)
-        pyxel.rect(90, 15, 9, 9, 8)
-        pyxel.rect(100, 15, 9, 9, 8)
-        pyxel.rect(110, 15, 9, 9, 8)
-    
-        # troisieme ligne de briques(x, y, 9x9, couleur)
-        pyxel.rect(10, 25, 9, 9, 8)
-        pyxel.rect(20, 25, 9, 9, 8)
-        pyxel.rect(30, 25, 9, 9, 8)
-        pyxel.rect(40, 25, 9, 9, 8)
-        pyxel.rect(50, 25, 9, 9, 8)
-        pyxel.rect(60, 25, 9, 9, 8)
-        pyxel.rect(70, 25, 9, 9, 8)
-        pyxel.rect(80, 25, 9, 9, 8)
-        pyxel.rect(90, 25, 9, 9, 8)
-        pyxel.rect(100, 25, 9, 9, 8)
-        pyxel.rect(110, 25, 9, 9, 8)
 
         pyxel.circ(balle_x, balle_y, 3, 10)
         
