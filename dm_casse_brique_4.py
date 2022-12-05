@@ -60,17 +60,14 @@ def balle_deplacement(x, y) :
     
     return x, y
 
-def briques_creation(x, y) :
-    for i in range(1) :
+def briques_creation(briques_x1, briques_y1, briques_x2, briques_y2, briques_x3, briques_y3) :
         briques_x1.append(10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110)
         briques_y1.append(5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5)
-    for i in range(1) :
         briques_x2.append(10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110)
         briques_y2.append(15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15) 
-    for i in range(1) :
         briques_x3.append(10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110)
         briques_y3.append(25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25)
-    return x, y
+    return briques_x1, briques_y1, briques_x2, briques_y2, briques_x3, briques_y3
 # =========================================================
 # == UPDATE
 # =========================================================
