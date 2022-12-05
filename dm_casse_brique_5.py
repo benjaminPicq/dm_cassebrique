@@ -60,26 +60,29 @@ def balle_deplacement(x, y) :
     
     return x, y
 
-def briques_creation(briques_x1, briques_y1, briques_x2, briques_y2, briques_x3, briques_y3) :
-    briques_x1.append(10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110)
-    briques_y1.append(5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5)
-    briques_x2.append(10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110)
-    briques_y2.append(15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15) 
-    briques_x3.append(10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110)
-    briques_y3.append(25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25)
-    return briques_x1, briques_y1, briques_x2, briques_y2, briques_x3, briques_y3
+def briques_creation(briques_x1, briques_y1) :
+    for l in range(33) :
+            briques_x1.append((0, 120), 10])
+            briques_y1.append([(5, 25), 10])
+    if briques_x1 >= 120 or briques_y1 <= 0 :
+        briques.remove(len(l))
+    return briques_x1, briques_y1
+
+def 
 # =========================================================
 # == UPDATE
 # =========================================================
 def update():
     """mise à jour des variables (30 fois par seconde)"""
 
-    global plateau_x, plateau_y, balle_x, balle_y
+    global plateau_x, plateau_y, balle_x, balle_y, briques_x1, briques_y1
 
     # mise à jour de la position du vaisseau
     plateau_x, plateau_y = plateau_deplacement(plateau_x, plateau_y)
         
     balle_x, balle_y = balle_deplacement(balle_x, balle_y)
+    
+    briques_x1, briques_y1 = briques_creation(briques_x1, briques_y1)
 
 # =========================================================
 # == DRAW
@@ -101,9 +104,9 @@ def draw():
 
         pyxel.circ(balle_x, balle_y, 3, 10)
         
-        pyxel.rect(briques_x1, briques_y1, 9, 9, couleur1)
-        pyxel.rect(briques_x1, briques_y1, 9, 9, couleur1)
-        pyxel.rect(briques_x3, briques_y3, 9, 9, couleur1)
+        for l in briques_x1 and briques_y1 :
+            for i in range(3) :
+                pyxel.rect(l[0], l[1], l[2], l[3], l[4], l[5], l[6], l[7], l[8], l[9], l[10] 9, 9, 8)
 
     else :
         pyxel.text(50,64, 'GAME OVER', 12)
