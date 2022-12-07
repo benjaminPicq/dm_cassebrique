@@ -16,7 +16,9 @@ xballe_speed = 3
 yballe_speed = 3
 blocs_x = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110]
 blocs_y = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+blocs_x1 = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110]
 blocs_y1 = [15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15]
+blocs_x2 = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110]
 blocs_y2 = [25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25]
 
 def plateau_deplacement(x, y):
@@ -58,10 +60,12 @@ def balle_deplacement(x, y) :
     return x, y
 
 def blocs_suppression(x, y) :
-    global blocs_x, blocs_y, blocs_y1, blocs_y2, balle_x, balle_y, xballe_speed, yballe_speed, balle_x, balle_y
+    global blocs_x, blocs_y, blocs_x1, blocs_y1, blocs_x2, blocs_y2, balle_x, balle_y, xballe_speed, yballe_speed, balle_x, balle_y
     if 5.5 <= balle_x <= 14.5 and 1.5 <= balle_y <= 9.5 :
-        bloc = blocs_y.index(10)
-        blocs_y.remove(bloc)
+        bloc_x = blocs_x.index(10)
+        bloc_y = blocs_y.index(5)
+        blocs_x.remove(bloc_x)
+        blocs_y.remove(bloc_y)
         xballe_speed = xballe_speed
         yballe_speed = -yballe_speed
     return x, y
@@ -105,11 +109,15 @@ def draw():
         for bloc in range(0, len(blocs_x)) :
             bx = blocs_x[bloc-1]
             by = blocs_y[bloc-1]
-            by1 = blocs_y1[bloc-1]
-            by2 = blocs_y2[bloc-1]
             pyxel.rect(bx, by, 9, 9, 8)
-            pyxel.rect(bx, by1, 9, 9, 8)
-            pyxel.rect(bx, by2, 9, 9, 8)
+        for bloc in range(0, len(blocs_x1))
+            bx1 = blocs_x1[bloc-1]
+            by1 = blocs_y1[bloc-1]
+            pyxel.rect(bx1, by1, 9, 9, 8)
+        for bloc in range(0, len(blocs_x2))
+            bx2 = blocs_x2[bloc-1]
+            by2 = blocs_y2[bloc-1]
+            pyxel.rect(bx2, by2, 9, 9, 8)
 
     else :
         pyxel.text(50,64, 'GAME OVER', 12)
