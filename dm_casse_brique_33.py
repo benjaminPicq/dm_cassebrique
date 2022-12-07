@@ -44,8 +44,8 @@ def balle_deplacement(x, y) :
         xballe_speed = xballe_speed
         balle_y = balle_y - 5
         yballe_speed = -yballe_speed
-    if  107 <= y <= (119):
-        if (plateau_x -20) <= x < (plateau_x) or (plateau_x + 15) < x <= (plateau_x + 35):
+    if  108 <= y <= (119):
+        if (plateau_x -18) <= x < (plateau_x) or (plateau_x + 13) < x <= (plateau_x + 25):
             balle_y = balle_y + 5
             xballe_speed = -xballe_speed
             yballe_speed = -yballe_speed
@@ -64,8 +64,8 @@ def blocs_suppression(balle_x, balle_y) :
     if 10 <= balle_x < 19 and 5 <= balle_y <= 14 :
         bloc_x = blocs_x.index(10)
         bloc_y = blocs_y.index(5)
-        blocs_x.remove(bloc_x)
-        blocs_y.remove(bloc_y)
+        blocs_x.pop(bloc_x)
+        blocs_y.pop(bloc_y)
         xballe_speed = xballe_speed
         yballe_speed = -yballe_speed
     return balle_x, balle_y
