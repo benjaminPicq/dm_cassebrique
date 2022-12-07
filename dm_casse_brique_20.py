@@ -3,18 +3,17 @@ import pyxel, random
 # ne pas modifier
 pyxel.init(128, 128, title="Nuit du c0de")
 
-# position initiale du vaisseau
-# (origine des positions : coin haut gauche)
+# position initiale du plateau
 plateau_x = 60
 plateau_y = 110
+
+# position initiale de la balle
 balle_x = 60
 balle_y = 90
+
+# vitesse de la balle
 xballe_speed = 3
 yballe_speed = 3
-exleft = 19
-exright = 109
-extop = 31
-exbtom = 52
 blocs = []
 
 def plateau_deplacement(x, y):
@@ -29,16 +28,17 @@ def plateau_deplacement(x, y):
     return x, y
 
 def balle_deplacement(x, y) :
-    global xballe_speed, yballe_speed, plateau_x, plateau_y, balle_x, balle_y, exleft, exright, exbtom, extop
+    "mouvement de la balle si elle touche le plateau ou l'un des cotes sauf le bas"
+    global xballe_speed, yballe_speed, plateau_x, plateau_y, balle_x, balle_y
     x -= xballe_speed
     y -= yballe_speed
     if (pyxel.frame_count % 300 == 0) :
         xballe_speed = xballe_speed + 1
         yballe_speed = yballe_speed + 1
-    if (pyxel.frame_count % 600 == 0) :
+    elif (pyxel.frame_count % 600 == 0) :
         xballe_speed = xballe_speed + 1
         yballe_speed = yballe_speed + 1
-    if (pyxel.frame_count % 900 == 0) :
+    elif (pyxel.frame_count % 900 == 0) :
         xballe_speed = xballe_speed + 1
         yballe_speed = yballe_speed + 1
     if (x < 5) or (x > 123):
@@ -65,8 +65,8 @@ def balle_deplacement(x, y) :
 
 def blocs_creation(blocs) :
     """création aléatoire des blocs"""
-    while (pyxel.frame_count % 30 <= 1) :
-        blocs.append([random.radint(0, 120), 10])
+    if (pyxel.frame_count % 30 <= 0): :
+        blocs.append([random.radint(0, 120, 10, 30)])
     return blocs
 # =========================================================
 # == UPDATE
@@ -76,11 +76,13 @@ def update():
 
     global plateau_x, plateau_y, balle_x, balle_y, blocs
 
-    # mise à jour de la position du vaisseau
+    # mise à jour de la position du plateau
     plateau_x, plateau_y = plateau_deplacement(plateau_x, plateau_y)
-        
+    
+    # mise à jour de la position de la balle
     balle_x, balle_y = balle_deplacement(balle_x, balle_y)
     
+    # insertion des données aleatoires dans la liste blocs
     blocs = blocs_creation(blocs)
 
 # =========================================================
@@ -92,6 +94,7 @@ def draw():
     # vide la fenetre
     pyxel.cls(0)
     
+    # si la balle est sur l'ecran 128x128
     if balle_y <= 128 :
         
         # polygone de 6 cotes
@@ -103,6 +106,7 @@ def draw():
         # balle de rayon 3
         pyxel.circ(balle_x, balle_y, 3, 10)
         
+        # blocs 9x9 couleur 8
         for bloc in blocs :
             pyxel.rect(bloc[0], bloc[1], 9, 9, 8)        
 
