@@ -14,7 +14,10 @@ balle_y = 90
 # vitesse de la balle
 xballe_speed = 3
 yballe_speed = 3
-blocs = []
+blocs_x = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110]
+blocs_y = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+blocs_y1 = [15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15]
+blocs_y2 = [25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25]
 
 def plateau_deplacement(x, y):
     """déplacement avec les touches de directions"""
@@ -63,11 +66,6 @@ def balle_deplacement(x, y) :
     
     return x, y
 
-def blocs_creation(blocs) :
-    """création aléatoire des blocs"""
-    if (pyxel.frame_count % 30 == 0) :
-        blocs.append([random.radint(0, 120, 10, 30)])
-    return blocs
 # =========================================================
 # == UPDATE
 # =========================================================
@@ -81,9 +79,6 @@ def update():
     
     # mise à jour de la position de la balle
     balle_x, balle_y = balle_deplacement(balle_x, balle_y)
-    
-    # insertion des données aleatoires dans la liste blocs
-    blocs = blocs_creation(blocs)
 
 # =========================================================
 # == DRAW
@@ -96,7 +91,6 @@ def draw():
     
     # si la balle est sur l'ecran 128x128
     if balle_y <= 128 :
-        
         # polygone de 6 cotes
         pyxel.rect(plateau_x, plateau_y, 16, 10, 3)
         pyxel.tri(plateau_x, plateau_y, plateau_x, plateau_y+15, plateau_x-15, plateau_y+15, 3)
@@ -106,9 +100,15 @@ def draw():
         # balle de rayon 3
         pyxel.circ(balle_x, balle_y, 3, 10)
         
-        # blocs 9x9 couleur 8
-        for bloc in blocs :
-            pyxel.rect(bloc[0], bloc[1], 9, 9, 8)        
+        # blocs 9x9 couleur 8 sur trois lignes
+        for bloc in range(0, len(blocs_x)) :
+            bx = blocs_x[bloc-1]
+            by = blocs_y[bloc-1]
+            by1 = blocs_y1[bloc-1]
+            by2 = blocs_y2[bloc-1]
+            pyxel.rect(bx, by, 9, 9, 8)
+            pyxel.rect(bx, by1, 9, 9, 8)
+            pyxel.rect(bx, by2, 9, 9, 8)
 
     else :
         pyxel.text(50,64, 'GAME OVER', 12)
