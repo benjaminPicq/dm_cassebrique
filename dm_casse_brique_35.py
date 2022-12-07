@@ -59,16 +59,6 @@ def balle_deplacement(x, y) :
     
     return x, y
 
-def blocs_suppression(balle_x, balle_y) :
-    global blocs_x, blocs_y, blocs_x1, blocs_y1, blocs_x2, blocs_y2, xballe_speed, yballe_speed
-    if 10 <= balle_x < 19 and 5 <= balle_y <= 14 :
-        bloc_x = blocs_x.index(10)
-        bloc_y = blocs_y.index(5)
-        blocs_x.pop(bloc_x)
-        blocs_y.pop(bloc_y)
-        xballe_speed = xballe_speed
-        yballe_speed = -yballe_speed
-    return balle_x, balle_y
 # =========================================================
 # == UPDATE
 # =========================================================
@@ -83,8 +73,6 @@ def update():
     # mise à jour de la position de la balle
     balle_x, balle_y = balle_deplacement(balle_x, balle_y)
     
-    balle_x, balle_y = blocs_suppression(balle_x, balle_y)
-
 # =========================================================
 # == DRAW
 # =========================================================
