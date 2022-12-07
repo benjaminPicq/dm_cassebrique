@@ -66,7 +66,7 @@ def balle_deplacement(x, y) :
 def blocs_creation(bl) :
     """création aléatoire des blocs"""
     while (pyxel.frame_count % 30 <= 1) :
-        blocs.append([random. radint(0, 120), 10])
+        blocs.append([random.radint(0, 120), 10])
     return blocs
 # =========================================================
 # == UPDATE
