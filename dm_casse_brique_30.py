@@ -110,11 +110,11 @@ def draw():
             bx = blocs_x[bloc-1]
             by = blocs_y[bloc-1]
             pyxel.rect(bx, by, 9, 9, 8)
-        for bloc in range(0, len(blocs_x1))
+        for bloc in range(0, len(blocs_x1)) :
             bx1 = blocs_x1[bloc-1]
             by1 = blocs_y1[bloc-1]
             pyxel.rect(bx1, by1, 9, 9, 8)
-        for bloc in range(0, len(blocs_x2))
+        for bloc in range(0, len(blocs_x2)) :
             bx2 = blocs_x2[bloc-1]
             by2 = blocs_y2[bloc-1]
             pyxel.rect(bx2, by2, 9, 9, 8)
