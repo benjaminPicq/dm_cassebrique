@@ -63,7 +63,7 @@ def balle_deplacement(x, y) :
     
     return x, y
 
-def blocs_creation(blocs) :
+def blocs_creation(bl) :
     """création aléatoire des blocs"""
     while (pyxel.frame_count % 30 <= 1) :
         blocs.append([random. radint(0, 120), 10])
@@ -81,7 +81,7 @@ def update():
         
     balle_x, balle_y = balle_deplacement(balle_x, balle_y)
     
-    blocs = blocs_creation(blocs)
+    blocs = blocs_creation(bl)
 
 # =========================================================
 # == DRAW
