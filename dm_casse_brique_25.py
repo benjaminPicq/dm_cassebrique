@@ -59,6 +59,12 @@ def balle_deplacement(x, y) :
 
 def blocs_suppression(balle_x, balle_y) :
     global blocs_x, blocs_y, blocs_y1, blocs_y2, balle_x, balle_y, xballe_speed, yballe_speed
+    if 5.5 <= balle_x <= 14.5 and 1.5 <= balle_y <= 9.5 :
+        bloc = blocs_y.index(10)
+        blocs_y.remove(bloc)
+        xballe_speed = xballe_speed
+        yballe_speed = -yballe_speed
+    return balle_x, balle_y
 # =========================================================
 # == UPDATE
 # =========================================================
