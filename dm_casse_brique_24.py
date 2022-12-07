@@ -23,10 +23,10 @@ def plateau_deplacement(x, y):
     """déplacement avec les touches de directions"""
     
     if pyxel.btn(pyxel.KEY_RIGHT):
-        if (x < 120) :
+        if (x < 96.5) :
             x = x + 1
     if pyxel.btn(pyxel.KEY_LEFT):
-        if (x > 0) :
+        if (x > 23.5) :
             x = x - 1
     return x, y
 
@@ -94,8 +94,8 @@ def draw():
         # polygone de 6 cotes
         pyxel.rect(plateau_x, plateau_y, 16, 10, 3)
         pyxel.tri(plateau_x, plateau_y, plateau_x, plateau_y+15, plateau_x-15, plateau_y+15, 3)
-        pyxel.tri(plateau_x+16, plateau_y, plateau_x+16, plateau_y+15, plateau_x+31, plateau_y+15, 3)
-        pyxel.rect(plateau_x-15, plateau_y+15, 47, 4, 3)
+        pyxel.tri(plateau_x+11, plateau_y, plateau_x+11, plateau_y+15, plateau_x+31, plateau_y+15, 3)
+        pyxel.rect(plateau_x-11, plateau_y+15, 32, 4, 3)
     
         # balle de rayon 3
         pyxel.circ(balle_x, balle_y, 3, 10)
