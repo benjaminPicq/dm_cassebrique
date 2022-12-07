@@ -8,7 +8,7 @@ pyxel.init(128, 128, title="Nuit du c0de")
 plateau_x = 60
 plateau_y = 110
 balle_x = 60
-balle_y = 50
+balle_y = 90
 xballe_speed = 3
 yballe_speed = 3
 exleft = 19
@@ -32,6 +32,15 @@ def balle_deplacement(x, y) :
     global xballe_speed, yballe_speed, plateau_x, plateau_y, balle_x, balle_y, exleft, exright, exbtom, extop
     x -= xballe_speed
     y -= yballe_speed
+    if (pyxel.frame_count % 300 == 0) :
+        xballe_speed = xballe_speed + 1
+        yballe_speed = yballe_speed + 1
+    if (pyxel.frame_count % 600 == 0) :
+        xballe_speed = xballe_speed + 1
+        yballe_speed = yballe_speed + 1
+    if (pyxel.frame_count % 900 == 0) :
+        xballe_speed = xballe_speed + 1
+        yballe_speed = yballe_speed + 1
     if (x < 5) or (x > 123):
         xballe_speed = -xballe_speed
         yballe_speed = yballe_speed
@@ -56,8 +65,8 @@ def balle_deplacement(x, y) :
 
 def blocs_creation(blocs) :
     """création aléatoire des blocs"""
-    for b in range(5) :
-        blocs.append([random. radint(0, 120), random.radint(5, 25)])
+    while (pyxel.frame_count % 30 <= 1) :
+        blocs.append([random. radint(0, 120), 10])
     return blocs
 # =========================================================
 # == UPDATE
