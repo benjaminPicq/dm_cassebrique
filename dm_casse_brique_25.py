@@ -35,15 +35,6 @@ def balle_deplacement(x, y) :
     global xballe_speed, yballe_speed, plateau_x, plateau_y, balle_x, balle_y
     x -= xballe_speed
     y -= yballe_speed
-    if (pyxel.frame_count % 300 == 0) :
-        xballe_speed = xballe_speed + 1
-        yballe_speed = yballe_speed + 1
-    elif (pyxel.frame_count % 600 == 0) :
-        xballe_speed = xballe_speed + 1
-        yballe_speed = yballe_speed + 1
-    elif (pyxel.frame_count % 900 == 0) :
-        xballe_speed = xballe_speed + 1
-        yballe_speed = yballe_speed + 1
     if (x < 5) or (x > 123):
         xballe_speed = -xballe_speed
         yballe_speed = yballe_speed
@@ -66,6 +57,8 @@ def balle_deplacement(x, y) :
     
     return x, y
 
+def blocs_suppression(balle_x, balle_y) :
+    global blocs_x, blocs_y, blocs_y1, blocs_y2, balle_x, balle_y, xballe_speed, yballe_speed
 # =========================================================
 # == UPDATE
 # =========================================================
