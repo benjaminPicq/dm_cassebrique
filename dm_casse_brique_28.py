@@ -78,6 +78,8 @@ def update():
     
     # mise à jour de la position de la balle
     balle_x, balle_y = balle_deplacement(balle_x, balle_y)
+    
+    balle_x, balle_y = blocs_suppression(balle_x, balle_y)
 
 # =========================================================
 # == DRAW
