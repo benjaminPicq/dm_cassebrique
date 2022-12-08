@@ -80,9 +80,9 @@ def draw():
     # si la balle est sur l'ecran 128x128
     if balle_y <= 128 :
         # polygone de 6 cotes
-        pyxel.rect(plateau_x, plateau_y, 11, 10, 5)
+        pyxel.rect(plateau_x, plateau_y, 11, 12, 5)
         pyxel.tri(plateau_x, plateau_y, plateau_x, plateau_y+11, plateau_x-11, plateau_y+11, 8)
-        pyxel.tri(plateau_x+11, plateau_y, plateau_x+11, plateau_y+11, plateau_x+22, plateau_y+11, 11)
+        pyxel.tri(plateau_x, plateau_y, plateau_x+, plateau_y+11, plateau_x+11, plateau_y+11, 11)
         pyxel.rect(plateau_x-11, plateau_y+11, 32, 3, 14)
     
         # balle de rayon 3
