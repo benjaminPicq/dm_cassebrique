@@ -45,7 +45,6 @@ def balle_deplacement(x, y) :
         yballe_speed = -yballe_speed
     if  108 <= y <= (119):
         if (plateau_x -18) <= x < (plateau_x) or (plateau_x + 13) < x <= (plateau_x + 25):
-            balle_y = balle_y + 5
             xballe_speed = -xballe_speed
             yballe_speed = -yballe_speed
         elif plateau_x <= x <= (plateau_x +15):
