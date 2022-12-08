@@ -12,8 +12,8 @@ balle_x = 60
 balle_y = 90
 
 # vitesse de la balle
-xballe_speed = 3
-yballe_speed = 3
+xballe = 3
+yballe = 3
 blocs_x = [30, 40, 50, 60, 70, 80, 90]
 blocs_y = [5, 5, 5, 5, 5, 5, 5]
 blocs_x1 = [30, 40, 50, 60, 70, 80, 90]
@@ -34,21 +34,21 @@ def plateau_deplacement(x, y):
 
 def balle_deplacement(x, y) :
     "mouvement de la balle si elle touche le plateau ou l'un des cotes sauf le bas"
-    global xballe_speed, yballe_speed, plateau_x, plateau_y, blocs_x, blocs_y, blocs_x1, blocs_y1, blocs_x2, blocs_y2
-    y -= yballe_speed
+    global xballe, yballe, plateau_x, plateau_y, blocs_x, blocs_y, blocs_x1, blocs_y1, blocs_x2, blocs_y2
+    y -= yballe
     if (x < 3) or (x > 123):
-        xballe_speed = -xballe_speed
+        xballe = -xballe
     elif (y < 3):
-        yballe_speed = -yballe_speed
+        yballe = -yballe
     if  108 <= y <= (119):
         if (plateau_x -18) <= x < (plateau_x) or (plateau_x + 13) < x <= (plateau_x + 25):
-            xballe_speed = -xballe_speed
-            yballe_speed = -yballe_speed
+            xballe = -xballe
+            yballe = -yballe
         elif plateau_x <= x <= (plateau_x +15):
-            yballe_speed = -yballe_speed
+            yballe = -yballe
     else:
-        xballe_speed = xballe_speed
-        yballe_speed = yballe_speed
+        xballe = xballe
+        yballe = yballe
     
     return x, y
 
