@@ -54,7 +54,7 @@ def balle_deplacement(x, y) :
         xballe_speed = xballe_speed
         yballe_speed = yballe_speed
     
-    for bloc_x in blocs_x and bloc_y for blocs_y :
+    for bloc_x in blocs_x and bloc_y in blocs_y :
         if bloc_x[0] - 4.5 <= x <= bloc_x[0] + 4.5 and bloc_y[0] - 4.5 <= bloc_y[0] + 4.5 :
             blocs_x.remove(bloc_x)
             blocs_y.remove(bloc_y)
