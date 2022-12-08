@@ -34,7 +34,7 @@ def plateau_deplacement(x, y):
 
 def balle_deplacement(x, y) :
     "mouvement de la balle si elle touche le plateau ou l'un des cotes sauf le bas"
-    global xballe, yballe, plateau_x, plateau_y,
+    global xballe, yballe, plateau_x, plateau_y
     y -= yballe
     if (x < 3) or (x > 123):
         xballe = -xballe
