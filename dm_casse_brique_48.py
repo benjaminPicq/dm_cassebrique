@@ -36,11 +36,12 @@ def balle_deplacement(x, y) :
     "mouvement de la balle si elle touche le plateau ou l'un des cotes sauf le bas"
     global xballe, yballe, plateau_x, plateau_y
     y -= yballe
+    x -= xballe
     if (x < 3) or (x > 123):
         xballe = -xballe
     elif (y < 3):
         yballe = -yballe
-    if  (90) <= y <= (128):
+    if  (90) <= y <= (110):
         if (plateau_x -18) <= x <= (plateau_x) or (plateau_x + 13) <= x <= (plateau_x + 25):
             xballe = -xballe
             yballe = -yballe
