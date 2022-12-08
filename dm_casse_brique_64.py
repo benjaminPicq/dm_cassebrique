@@ -82,8 +82,8 @@ def draw():
         # polygone de 6 cotes
         pyxel.rect(plateau_x, plateau_y, 11, 12, 5)
         pyxel.tri(plateau_x, plateau_y, plateau_x, plateau_y+11, plateau_x-11, plateau_y+11, 8)
-        pyxel.tri(plateau_x+11, plateau_y, plateau_x+11, plateau_y+11, plateau_x+20, plateau_y+11, 11)
-        pyxel.rect(plateau_x-11, plateau_y+11, 32, 3, 14)
+        pyxel.tri(plateau_x+11, plateau_y, plateau_x+11, plateau_y+11, plateau_x+22, plateau_y+11, 11)
+        pyxel.rect(plateau_x-11, plateau_y+11, 34, 3, 14)
     
         # balle de rayon 3
         pyxel.circ(balle_x, balle_y, 3, 10)
