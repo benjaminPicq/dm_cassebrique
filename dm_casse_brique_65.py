@@ -44,7 +44,7 @@ def balle_deplacement(x, y) :
     if  (103) <= y <= (128):
         if (plateau_x -17) <= x <= (plateau_x) or (plateau_x + 17) <= x <= (plateau_x + 25):
             xballe = -xballe
-            yballe = -yballe
+            yballe = yballe
         elif plateau_x <= x <= (plateau_x +15):
             yballe = -yballe
             xballe = -xballe
@@ -80,9 +80,9 @@ def draw():
     # si la balle est sur l'ecran 128x128
     if balle_y <= 128 :
         # polygone de 6 cotes
-        pyxel.rect(plateau_x, plateau_y, 11, 12, 5)
-        pyxel.tri(plateau_x, plateau_y, plateau_x, plateau_y+11, plateau_x-11, plateau_y+11, 8)
-        pyxel.tri(plateau_x+11, plateau_y, plateau_x+11, plateau_y+11, plateau_x+22, plateau_y+11, 11)
+        pyxel.rect(plateau_x, plateau_y, 11, 12, 14)
+        pyxel.tri(plateau_x, plateau_y, plateau_x, plateau_y+11, plateau_x-11, plateau_y+11, 14)
+        pyxel.tri(plateau_x+11, plateau_y, plateau_x+11, plateau_y+11, plateau_x+22, plateau_y+11, 14)
         pyxel.rect(plateau_x-11, plateau_y+11, 34, 3, 14)
     
         # balle de rayon 3
