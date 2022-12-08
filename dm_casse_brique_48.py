@@ -41,7 +41,7 @@ def balle_deplacement(x, y) :
         xballe = -xballe
     elif (y < 3):
         yballe = -yballe
-    if  (90) <= y <= (110):
+    if  (90) <= y <= (128):
         if (plateau_x -18) <= x <= (plateau_x) or (plateau_x + 13) <= x <= (plateau_x + 25):
             xballe = -xballe
             yballe = -yballe
