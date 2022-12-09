@@ -14,6 +14,7 @@ balle_y = 90
 # vitesse de la balle
 xballe = 3
 yballe = 3
+
 blocs_x = [30, 40, 50, 60, 70, 80, 90]
 blocs_y = [5, 5, 5, 5, 5, 5, 5]
 blocs_x1 = [30, 40, 50, 60, 70, 80, 90]
@@ -21,6 +22,15 @@ blocs_y1 = [15, 15, 15, 15, 15, 15, 15]
 blocs_x2 = [30, 40, 50, 60, 70, 80, 90]
 blocs_y2 = [25, 25, 25, 25, 25, 25, 25]
 
+vies = 3
+game = False
+
+def vie(vies, game) :
+    if balle_y > 128 :
+        vies = vies - 1
+        game = False
+    return vies, game
+    
 def plateau_deplacement(x, y):
     """déplacement avec les touches de directions"""
     
@@ -42,7 +52,7 @@ def balle_deplacement(x, y) :
     elif (y < 3):
         yballe = -yballe
     
-    if (plateau_y + 7) >= y >= (plateau_y -5) and (plateau_x - 1) <= x <= (plateau_x + 11) :
+    if (plateau_y + 7) >= y >= (plateau_y -5) and (plateau_x) <= x <= (plateau_x + 10) :
         yballe = -yballe
     if (106) <= y < (128) :
         if (plateau_x -17) <= x <= (plateau_x) or (plateau_x + 17) <= x <= (plateau_x + 25):
@@ -57,19 +67,74 @@ def balle_deplacement(x, y) :
     
     return x, y
 
+def blocs_suppression(balle_x, balle_y) :
+    global xballe, yballe, blocs_x, blocs_y, blocs_x1, blocs_y1, blocs_x2, blocs_y2
+    
+    y -= yballe
+    x -= xballe
+    
+    if 39 >= x >= 30 and 14 >= y >= 5 :
+        bloc = blocs_x.index(30)
+        blocs_x.remove(bloc)
+        blocs_y.remove(0)
+        yballe = -yballe
+    if 49 >= x >= 40 and 14 >= y >= 5 :
+        bloc = blocs_x.index(40)
+        blocs_x.remove(bloc)
+        blocs_y.remove(0)
+        yballe = -yballe
+    if 59 >= x >= 50 and 14 >= y >= 5 :
+        bloc = blocs_x.index(50)
+        blocs_x.remove(bloc)
+        blocs_y.remove(0)
+        yballe = -yballe
+    if 69 >= x >= 60 and 14 >= y >= 5 :
+        bloc = blocs_x.index(60)
+        blocs_x.remove(bloc)
+        blocs_y.remove(0)
+        yballe = -yballe
+    if 79 >= x >= 70 and 14 >= y >= 5 :
+        bloc = blocs_x.index(70)
+        blocs_x.remove(bloc)
+        blocs_y.remove(0)
+        yballe = -yballe
+    if 89 >= x >= 80 and 14 >= y >= 5 :
+        bloc = blocs_x.index(80)
+        blocs_x.remove(bloc)
+        blocs_y.remove(0)
+        yballe = -yballe
+    if 99 >= x >= 90 and 14 >= y >= 5 :
+        bloc = blocs_x.index(90)
+        blocs_x.remove(bloc)
+        blocs_y.remove(0)
+        yballe = -yballe
+    
+    return balle_x, balle_y
+
 # =========================================================
 # == UPDATE
 # =========================================================
 def update():
     """mise à jour des variables (30 fois par seconde)"""
 
-    global plateau_x, plateau_y, balle_x, balle_y, blocs
-
+    global plateau_x, plateau_y, balle_x, balle_y, vies, games
+    
+    # mise à jour des vies et de l'etat du jeu (si on peut jouer ou pas
+    vies, game = vie(vies, game)
+    
     # mise à jour de la position du plateau
     plateau_x, plateau_y = plateau_deplacement(plateau_x, plateau_y)
     
     # mise à jour de la position de la balle
-    balle_x, balle_y = balle_deplacement(balle_x, balle_y)
+    if game == False :
+        balle_x = 60
+        balle_y = 100
+        if pyxel.btn(pyxel.KEY_SPACE) :
+            game = True
+    if game == True
+        balle_x, balle_y = balle_deplacement(balle_x, balle_y)
+        
+    balle_x, balle_y = blocs_suppression(balle_x, balle_y)
     
 # =========================================================
 # == DRAW
