@@ -22,9 +22,6 @@ blocs_y1 = [15, 15, 15, 15, 15, 15, 15]
 blocs_x2 = [30, 40, 50, 60, 70, 80, 90]
 blocs_y2 = [25, 25, 25, 25, 25, 25, 25]
 
-vies = 3
-game = False
-
 def vie(vies, game) :
     if balle_y > 128 :
         vies = vies - 1
@@ -126,13 +123,8 @@ def update():
     plateau_x, plateau_y = plateau_deplacement(plateau_x, plateau_y)
     
     # mise à jour de la position de la balle
-    if game == False :
-        balle_x = 60
-        balle_y = 100
-        if pyxel.btn(pyxel.KEY_SPACE) :
-            game = True
-    if game == True :
-        balle_x, balle_y = balle_deplacement(balle_x, balle_y)
+
+    balle_x, balle_y = balle_deplacement(balle_x, balle_y)
         
     balle_x, balle_y = blocs_suppression(balle_x, balle_y)
     
