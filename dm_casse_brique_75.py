@@ -131,7 +131,7 @@ def update():
         balle_y = 100
         if pyxel.btn(pyxel.KEY_SPACE) :
             game = True
-    if game == True
+    if game == True :
         balle_x, balle_y = balle_deplacement(balle_x, balle_y)
         
     balle_x, balle_y = blocs_suppression(balle_x, balle_y)
