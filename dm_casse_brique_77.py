@@ -21,12 +21,6 @@ blocs_x1 = [30, 40, 50, 60, 70, 80, 90]
 blocs_y1 = [15, 15, 15, 15, 15, 15, 15]
 blocs_x2 = [30, 40, 50, 60, 70, 80, 90]
 blocs_y2 = [25, 25, 25, 25, 25, 25, 25]
-
-def vie(vies, game) :
-    if balle_y > 128 :
-        vies = vies - 1
-        game = False
-    return vies, game
     
 def plateau_deplacement(x, y):
     """déplacement avec les touches de directions"""
@@ -64,49 +58,51 @@ def balle_deplacement(x, y) :
     
     return x, y
 
-def blocs_suppression(balle_x, balle_y) :
+def blocs_suppression(x, y) :
     global xballe, yballe, blocs_x, blocs_y, blocs_x1, blocs_y1, blocs_x2, blocs_y2
     
+    gam = True
     y -= yballe
     x -= xballe
     
     if 39 >= x >= 30 and 14 >= y >= 5 :
         bloc = blocs_x.index(30)
-        blocs_x.remove(bloc)
-        blocs_y.remove(0)
+        blocs_x.pop(bloc)
+        blocs_y.pop(0)
         yballe = -yballe
     if 49 >= x >= 40 and 14 >= y >= 5 :
         bloc = blocs_x.index(40)
-        blocs_x.remove(bloc)
-        blocs_y.remove(0)
+        blocs_x.pop(bloc)
+        blocs_y.pop(0)
         yballe = -yballe
     if 59 >= x >= 50 and 14 >= y >= 5 :
         bloc = blocs_x.index(50)
-        blocs_x.remove(bloc)
-        blocs_y.remove(0)
+        blocs_x.pop(bloc)
+        blocs_y.pop(0)
         yballe = -yballe
     if 69 >= x >= 60 and 14 >= y >= 5 :
         bloc = blocs_x.index(60)
-        blocs_x.remove(bloc)
-        blocs_y.remove(0)
+        blocs_x.pop(bloc)
+        blocs_y.pop(0)
         yballe = -yballe
     if 79 >= x >= 70 and 14 >= y >= 5 :
         bloc = blocs_x.index(70)
-        blocs_x.remove(bloc)
-        blocs_y.remove(0)
+        blocs_x.pop(bloc)
+        blocs_y.pop(0)
         yballe = -yballe
     if 89 >= x >= 80 and 14 >= y >= 5 :
         bloc = blocs_x.index(80)
-        blocs_x.remove(bloc)
-        blocs_y.remove(0)
+        blocs_x.pop(bloc)
+        blocs_y.pop(0)
         yballe = -yballe
     if 99 >= x >= 90 and 14 >= y >= 5 :
         bloc = blocs_x.index(90)
-        blocs_x.remove(bloc)
-        blocs_y.remove(0)
+        blocs_x.pop(bloc)
+        blocs_y.pop(0)
         yballe = -yballe
-    
-    return balle_x, balle_y
+    if len(blocs_y) == 0 :
+        game = False
+    return x, y
 
 # =========================================================
 # == UPDATE
@@ -138,7 +134,7 @@ def draw():
     pyxel.cls(0)
     
     # si la balle est sur l'ecran 128x128
-    if balle_y <= 128 :
+    if balle_y <= 128 or game == True :
         # polygone de 6 cotes
         pyxel.rect(plateau_x, plateau_y, 11, 12, 14)
         pyxel.tri(plateau_x, plateau_y, plateau_x, plateau_y+11, plateau_x-11, plateau_y+11, 14)
