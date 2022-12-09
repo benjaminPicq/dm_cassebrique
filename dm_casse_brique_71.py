@@ -25,10 +25,10 @@ def plateau_deplacement(x, y):
     """déplacement avec les touches de directions"""
     
     if pyxel.btn(pyxel.KEY_RIGHT):
-        if (x < 96.5) :
+        if (x < 111) :
             x = x + 1
     if pyxel.btn(pyxel.KEY_LEFT):
-        if (x > 23.5) :
+        if (x > 17) :
             x = x - 1
     return x, y
 
