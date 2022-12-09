@@ -65,37 +65,37 @@ def blocs_suppression(x, y) :
     y -= yballe
     x -= xballe
     
-    if 39 >= x >= 30 and 14 >= y >= 5 :
+    if (39) >= x >= (30) and (14) >= y >= (5) :
         bloc = blocs_x.index(30)
         blocs_x.pop(bloc)
         blocs_y.pop(0)
         yballe = -yballe
-    if 49 >= x >= 40 and 14 >= y >= 5 :
+    if (49) >= x >= (40) and (14) >= y >= (5) :
         bloc = blocs_x.index(40)
         blocs_x.pop(bloc)
         blocs_y.pop(0)
         yballe = -yballe
-    if 59 >= x >= 50 and 14 >= y >= 5 :
+    if (59) >= x >= (50) and (14) >= y >= (5) :
         bloc = blocs_x.index(50)
         blocs_x.pop(bloc)
         blocs_y.pop(0)
         yballe = -yballe
-    if 69 >= x >= 60 and 14 >= y >= 5 :
+    if (69) >= x >= (60) and (14) >= y >= (5) :
         bloc = blocs_x.index(60)
         blocs_x.pop(bloc)
         blocs_y.pop(0)
         yballe = -yballe
-    if 79 >= x >= 70 and 14 >= y >= 5 :
+    if (79) >= x >= (70) and (14) >= y >= (5) :
         bloc = blocs_x.index(70)
         blocs_x.pop(bloc)
         blocs_y.pop(0)
         yballe = -yballe
-    if 89 >= x >= 80 and 14 >= y >= 5 :
+    if (89) >= x >= (80) and (14) >= y >= (5) :
         bloc = blocs_x.index(80)
         blocs_x.pop(bloc)
         blocs_y.pop(0)
         yballe = -yballe
-    if 99 >= x >= 90 and 14 >= y >= 5 :
+    if (99) >= x >= (90) and (14) >= y >= (5) :
         bloc = blocs_x.index(90)
         blocs_x.pop(bloc)
         blocs_y.pop(0)
