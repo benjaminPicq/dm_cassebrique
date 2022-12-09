@@ -28,7 +28,7 @@ def plateau_deplacement(x, y):
         if (x < 105) :
             x = x + 1
     if pyxel.btn(pyxel.KEY_LEFT):
-        if (x > 15) :
+        if (x > 12) :
             x = x - 1
     return x, y
 
@@ -42,7 +42,7 @@ def balle_deplacement(x, y) :
     elif (y < 3):
         yballe = -yballe
     
-    if (plateau_y + 7) >= y >= (plateau_y -5) and (plateau_x - 3) <= x <= (plateau_x + 11) :
+    if (plateau_y + 7) >= y >= (plateau_y -5) and (plateau_x - 1) <= x <= (plateau_x + 11) :
         yballe = -yballe
     if (106) <= y < (128) :
         if (plateau_x -17) <= x <= (plateau_x) or (plateau_x + 17) <= x <= (plateau_x + 25):
