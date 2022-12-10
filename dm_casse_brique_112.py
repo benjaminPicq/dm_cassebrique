@@ -74,7 +74,7 @@ def balle_deplacement(x, y) :
             blocs.remove(bloc)
         elif yballe == by + 9 and bx + 9 >= xballe >= bx :
             yballe = -yballe
-            blocs.remove(bloc
+            blocs.remove(bloc)
         elif yballe == by and bx + 9 >= xballe >= bx :
             yballe = -yballe
             blocs.remove(bloc)
