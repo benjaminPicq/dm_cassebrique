@@ -66,42 +66,41 @@ def blocs_suppression(x, y) :
     x -= xballe
     
     if (39) >= x >= (30) and (14) >= y >= (5) :
-        bloc = blocs_x.index(30)
-        blocs_x.pop(bloc)
-        blocs_y.pop(0)
-        yballe = -yballe
+        if balle_y == 14 or balle_y == 5 :
+            yballe = -yballe
+        if 5 < balle_y < (14) :
+            xballe = -xballe
     if (49) >= x >= (40) and (14) >= y >= (5) :
-        bloc = blocs_x.index(40)
-        blocs_x.pop(bloc)
-        blocs_y.pop(0)
-        yballe = -yballe
+        if balle_y == 14 or balle_y == 5 :
+            yballe = -yballe
+        if 5 < balle_y < (14) :
+            xballe = -xballe
     if (59) >= x >= (50) and (14) >= y >= (5) :
-        bloc = blocs_x.index(50)
-        blocs_x.pop(bloc)
-        blocs_y.pop(0)
-        yballe = -yballe
+        if balle_y == 14 or balle_y == 5 :
+            yballe = -yballe
+        if 5 < balle_y < (14) :
+            xballe = -xballe
     if (69) >= x >= (60) and (14) >= y >= (5) :
-        bloc = blocs_x.index(60)
-        blocs_x.pop(bloc)
-        blocs_y.pop(0)
-        yballe = -yballe
+        if balle_y == 14 or balle_y == 5 :
+            yballe = -yballe
+        if 5 < balle_y < (14) :
+            xballe = -xballe
     if (79) >= x >= (70) and (14) >= y >= (5) :
-        bloc = blocs_x.index(70)
-        blocs_x.pop(bloc)
-        blocs_y.pop(0)
-        yballe = -yballe
+        if balle_y == 14 or balle_y == 5 :
+            yballe = -yballe
+        if 5 < balle_y < (14) :
+            xballe = -xballe
     if (89) >= x >= (80) and (14) >= y >= (5) :
-        bloc = blocs_x.index(80)
-        blocs_x.pop(bloc)
-        blocs_y.pop(0)
-        yballe = -yballe
+        if balle_y == 14 or balle_y == 5 :
+            yballe = -yballe
+        if 5 < balle_y < (14) :
+            xballe = -xballe
     if (99) >= x >= (90) and (14) >= y >= (5) :
-        bloc = blocs_x.index(90)
-        blocs_x.pop(bloc)
-        blocs_y.pop(0)
-        yballe = -yballe
-    if len(blocs_y) == 0 :
-        game = False
+        if balle_y == 14 or balle_y == 5 :
+            yballe = -yballe
+        if 5 < balle_y < (14) :
+            xballe = -xballe
+  
     return x, y
 
 # =========================================================
