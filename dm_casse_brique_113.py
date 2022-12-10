@@ -16,18 +16,28 @@ xballe = 1
 yballe = 1
 
 # coordonnes des blocs
-bx = 30
-bx1 = 40
-bx2 = 50
-bx3 = 60
-bx4 = 70
-bx5 = 80
-bx6 = 90
-by = 5
-by1 = 15
-by2 = 25
-
-blocs = [ [bx, by, 8], [bx1, by, 8], [bx2, by, 8], [bx3, by, 8], [bx4, by, 8], [bx5, by, 8], [bx6, by, 8], [bx, by1, 8], [bx1, by1, 8], [bx2, by1, 8], [bx3, by1, 8], [bx4, by1, 8], [bx5, by1, 8], [bx6, by1, 8], [bx, by2, 8], [bx1, by2, 8], [bx2, by2, 8], [bx3, by2, 8], [bx4, by2, 8], [bx5, by2, 8], [bx6, by2, 8] ]
+bx = [30, 5]
+bx1 = [40, 5]
+bx2 = [50, 5]
+bx3 = [60, 5]
+bx4 = [70, 5]
+bx5 = [80, 5]
+bx6 = [90, 5]
+bx_ = [30, 15]
+bx_1 = [40, 15]
+bx_2 = [50, 15]
+bx_3 = [60, 15]
+bx_4 = [70, 15]
+bx_5 = [80, 15]
+bx_6 = [90, 15]
+bx7 = [30, 25]
+bx8 = [40, 25]
+bx9 = [50, 25]
+bx10 = [60, 25]
+bx11 = [70, 25]
+bx12 = [80, 25]
+bx13 = [90, 25]
+blocs = [ [bx], [bx1], [bx2], [bx3], [bx4], [bx5], [bx6], [bx_], [bx_1], [bx_2], [bx_3], [bx_4], [bx_5], [bx_6], [bx7], [bx8], [bx9], [bx10], [bx11], [bx12], [bx13] ]
     
 def plateau_deplacement(x, y):
     """déplacement avec les touches de directions"""
@@ -62,27 +72,8 @@ def balle_deplacement(x, y) :
     else:
         xballe = xballe
         yballe = yballe
-        
-    for bloc in blocs :
-        bx = bloc[0]
-        by = bloc[1]
-        if by + 9 >= yballe >= by and xballe == bx :
-            xballe = -xballe
-            blocs.remove(bloc)
-        elif by + 9 >= yballe >= by and xballe == bx + 9 :
-            xballe = -xballe
-            blocs.remove(bloc)
-        elif yballe == by + 9 and bx + 9 >= xballe >= bx :
-            yballe = -yballe
-            blocs.remove(bloc)
-        elif yballe == by and bx + 9 >= xballe >= bx :
-            yballe = -yballe
-            blocs.remove(bloc)
-        else :
-             xballe = xballe
-             yballe = yballe
-    return x, y
 
+    return x, y
 # =========================================================
 # == UPDATE
 # =========================================================
@@ -119,7 +110,7 @@ def draw():
         
         # blocs 9x9 couleur 8 sur trois lignes
         for bloc in blocs :
-            pyxel.rect(bloc[0], bloc[1], 9, 9, bloc[2])
+            pyxel.rect(bloc[0], 9, 9, 8)
 
 
     else :
