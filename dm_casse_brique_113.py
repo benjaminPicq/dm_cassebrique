@@ -37,7 +37,6 @@ bx10 = [60, 25]
 bx11 = [70, 25]
 bx12 = [80, 25]
 bx13 = [90, 25]
-blocs = [ [bx], [bx1], [bx2], [bx3], [bx4], [bx5], [bx6], [bx_], [bx_1], [bx_2], [bx_3], [bx_4], [bx_5], [bx_6], [bx7], [bx8], [bx9], [bx10], [bx11], [bx12], [bx13] ]
     
 def plateau_deplacement(x, y):
     """déplacement avec les touches de directions"""
@@ -74,6 +73,19 @@ def balle_deplacement(x, y) :
         yballe = yballe
 
     return x, y
+
+def suppression_blocs(x, y) :
+    global xballe, yballe, bx, bx1, bx2, bx3, bx4, bx5, bx6, bx_, bx_1, bx_2, bx_3, bx_4, bx_5, bx_6, bx7, bx8, bx9, bx10, bx11, bx12, bx13
+    x -= yballe
+    y -= xballe
+    if bx[0] >= x >= bx[0] + 9 and y == bx[1] or bx1[0] >= x >= bx1[0] + 9 and y == bx1[1] or bx2[0] >= x >= bx2[0] + 9 and y == bx2[1] \
+    or bx3[0] >= x >= bx3[0] + 9 and y == bx3[1] or bx4[0] >= x >= bx4[0] + 9 and y == bx4[1] or bx5[0] >= x >= bx5[0] + 9 and y == bx5[1] \
+    or bx6[0] >= x >= bx6[0] + 9 and y == bx6[1] or bx_[0] >= x >= bx_[0] + 9 and y == bx_[1] or bx_1[0] >= x >= bx_1[0] + 9 and y == bx_1[1] \
+    or bx_2[0] >= x >= bx_2[0] + 9 and y == bx_2[1] or bx_3[0] >= x >= bx_3[0] + 9 and y == bx_3[1] or bx_4[0] >= x >= bx_4[0] + 9 and y == bx_4[1] \
+    or bx7[0] >= x >= bx7[0] + 9 and y == bx7[1] or bx8[0] >= x >= bx8[0] + 9 and y == bx8[1] or bx9[0] >= x >= bx9[0] + 9 and y == bx9[1] \
+    or bx10[0] >= x >= bx10[0] + 9 and y == bx10[1] or bx11[0] >= x >= bx11[0] + 9 and y == bx11[1] or bx12[0] >= x >= bx12[0] + 9 and y == bx12[1] \
+    or bx13[0] >= x >= bx13[0] + 9 and y == bx13[1] or bx[0] >= x >= bx[0] and y == bx[1] or bx1[0] >= x >= bx1[0] and y == bx1[1] or :
+        xballe = -xballe
 # =========================================================
 # == UPDATE
 # =========================================================
@@ -109,9 +121,29 @@ def draw():
         pyxel.circ(balle_x, balle_y, 3, 10)
         
         # blocs 9x9 couleur 8 sur trois lignes
-        for bloc in blocs :
-            pyxel.rect(bloc[0], 9, 9, 8)
-
+        pyxel.rect(bx[0], bx[1] 9, 9, 8)
+        pyxel.rect(bx1[0], bx1[1] 9, 9, 8)
+        pyxel.rect(bx2[0], bx2[1] 9, 9, 8)
+        pyxel.rect(bx3[0], bx3[1] 9, 9, 8)
+        pyxel.rect(bx4[0], bx4[1] 9, 9, 8)
+        pyxel.rect(bx5[0], bx5[1] 9, 9, 8)
+        pyxel.rect(bx6[0], bx6[1] 9, 9, 8)
+        
+        pyxel.rect(bx_[0], bx_[1] 9, 9, 8)
+        pyxel.rect(bx_1[0], bx_1[1] 9, 9, 8)
+        pyxel.rect(bx_2[0], bx_2[1] 9, 9, 8)
+        pyxel.rect(bx_3[0], bx_3[1] 9, 9, 8)
+        pyxel.rect(bx_4[0], bx_4[1] 9, 9, 8)
+        pyxel.rect(bx_5[0], bx_5[1] 9, 9, 8)
+        pyxel.rect(bx_6[0], bx_6[1] 9, 9, 8)
+        
+        pyxel.rect(bx7[0], bx7[1] 9, 9, 8)
+        pyxel.rect(bx8[0], bx8[1] 9, 9, 8)
+        pyxel.rect(bx9[0], bx9[1] 9, 9, 8)
+        pyxel.rect(bx10[0], bx10[1] 9, 9, 8)
+        pyxel.rect(bx11[0], bx11[1] 9, 9, 8)
+        pyxel.rect(bx12[0], bx12[1] 9, 9, 8)
+        pyxel.rect(bx13[0], bx13[1] 9, 9, 8)
 
     else :
         pyxel.text(50,64, 'GAME OVER', 12)
