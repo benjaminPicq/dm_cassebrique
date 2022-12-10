@@ -60,43 +60,44 @@ def balle_deplacement(x, y) :
 
 def blocs_suppression(x, y) :
     global xballe, yballe, blocs_x, blocs_y, blocs_x1, blocs_y1, blocs_x2, blocs_y2
+    
     x -= xballe
     y -= yballe
     
     if (39) >= x >= (30) and (14) >= y >= (5) :
-        if balle_y == 14 or balle_y == 5 :
+        if balle_y == 15 or balle_y == 5 :
             yballe = -yballe
-        if 5 < balle_y < (14) :
+        if 5 < balle_y < 15 :
             xballe = -xballe
     if (49) >= x >= (40) and (14) >= y >= (5) :
         if balle_y == 14 or balle_y == 5 :
             yballe = -yballe
-        if 5 < balle_y < (14) :
+        if 5 < balle_y < 15 :
             xballe = -xballe
     if (59) >= x >= (50) and (14) >= y >= (5) :
         if balle_y == 14 or balle_y == 5 :
             yballe = -yballe
-        if 5 < balle_y < (14) :
+        if 5 < balle_y < 15 :
             xballe = -xballe
     if (69) >= x >= (60) and (14) >= y >= (5) :
         if balle_y == 14 or balle_y == 5 :
             yballe = -yballe
-        if 5 < balle_y < (14) :
+        if 5 < balle_y < 15 :
             xballe = -xballe
     if (79) >= x >= (70) and (14) >= y >= (5) :
         if balle_y == 14 or balle_y == 5 :
             yballe = -yballe
-        if 5 < balle_y < (14) :
+        if 5 < balle_y < 15 :
             xballe = -xballe
     if (89) >= x >= (80) and (14) >= y >= (5) :
         if balle_y == 14 or balle_y == 5 :
             yballe = -yballe
-        if 5 < balle_y < (14) :
+        if 5 < balle_y < 15 :
             xballe = -xballe
     if (99) >= x >= (90) and (14) >= y >= (5) :
         if balle_y == 14 or balle_y == 5 :
             yballe = -yballe
-        if 5 < balle_y < (14) :
+        if 5 < balle_y < 15 :
             xballe = -xballe
     else : 
         xballe = xballe
