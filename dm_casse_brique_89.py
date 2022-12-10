@@ -282,7 +282,6 @@ def draw():
         pyxel.circ(balle_x, balle_y, 3, 10)
         
         # blocs 9x9 couleur 8 sur trois lignes
-        for m in range(1) :
             for bloc in range(0, len(blocs_x)) :
                 blx = blocs_x[bloc-1]
                 bly = blocs_y[bloc-1]
