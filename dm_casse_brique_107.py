@@ -27,7 +27,7 @@ by = 5
 by1 = 15
 by2 = 25
 
-blocs = [ [[bx, by, 8], [bx1, by, 8], [bx2, by, 8], [bx3, by, 8], [bx4, by, 8], [bx5, by, 8], [bx6, by, 8], [bx, by1, 8], [bx1, by1, 8], [bx2, by1, 8], [bx3, by1, 8], [bx4, by1, 8], [bx5, by1, 8], [bx6, by1, 8], [bx, by2, 8], [bx1, by2, 8], [bx2, by2, 8], [bx3, by2, 8], [bx4, by2, 8], [bx5, by2, 8], [bx6, by2, 8]] ]
+blocs = [ [bx, by, 8], [bx1, by, 8], [bx2, by, 8], [bx3, by, 8], [bx4, by, 8], [bx5, by, 8], [bx6, by, 8], [bx, by1, 8], [bx1, by1, 8], [bx2, by1, 8], [bx3, by1, 8], [bx4, by1, 8], [bx5, by1, 8], [bx6, by1, 8], [bx, by2, 8], [bx1, by2, 8], [bx2, by2, 8], [bx3, by2, 8], [bx4, by2, 8], [bx5, by2, 8], [bx6, by2, 8] ]
     
 def plateau_deplacement(x, y):
     """déplacement avec les touches de directions"""
@@ -100,7 +100,7 @@ def draw():
         pyxel.circ(balle_x, balle_y, 3, 10)
         
         # blocs 9x9 couleur 8 sur trois lignes
-        for bloc in blocs[level] :
+        for bloc in blocs :
             pyxel.rect(bloc[0], bloc[1], 9, 9, bloc[2])
 
 
