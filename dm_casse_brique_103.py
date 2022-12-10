@@ -115,7 +115,7 @@ def draw():
         
         # blocs 9x9 couleur 8 sur trois lignes
         for bloc in blocs :
-            pyxel.rect(bloc[0], bloc[1], 9, 9, 8)
+            pyxel.rect(bloc[0], bloc[1], 9, 9, bloc[2])
 
 
     else :
