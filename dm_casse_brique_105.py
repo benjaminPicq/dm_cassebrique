@@ -100,7 +100,7 @@ def draw():
         pyxel.circ(balle_x, balle_y, 3, 10)
         
         # blocs 9x9 couleur 8 sur trois lignes
-        for bloc in blocs :
+        for bloc in blocs[level] :
             pyxel.rect(bloc[0], bloc[1], 9, 9, bloc[2])
 
 
