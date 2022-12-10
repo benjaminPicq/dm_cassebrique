@@ -27,7 +27,7 @@ by = 5
 by1 = 15
 by2 = 25
 
-blocs = [ [[bx, by], [bx1, by], [bx2, by], [bx3, by], [bx4, by], [bx5, by], [bx6, by], [bx, by1], [bx1, by1], [bx2, by1], [bx3, by1], [bx4, by1], [bx5, by1], [bx6, by1], [bx, by2], [bx1, by2], [bx2, by2], [bx3, by2], [bx4, by2], [bx5, by2], [bx6, by2]] ]
+blocs = [ [[bx, by, 8], [bx1, by, 8], [bx2, by, 8], [bx3, by, 8], [bx4, by, 8], [bx5, by, 8], [bx6, by, 8], [bx, by1, 8], [bx1, by1, 8], [bx2, by1, 8], [bx3, by1, 8], [bx4, by1, 8], [bx5, by1, 8], [bx6, by1, 8], [bx, by2, 8], [bx1, by2, 8], [bx2, by2, 8], [bx3, by2, 8], [bx4, by2, 8], [bx5, by2, 8], [bx6, by2, 8]] ]
     
 def plateau_deplacement(x, y):
     """déplacement avec les touches de directions"""
@@ -66,16 +66,20 @@ def balle_deplacement(x, y) :
     for bloc in blocs :
         bx = bloc[0]
         by = bloc[1]
-        if by + 9 > yballe > by and xballe == bx or xballe == bx + 9 :
-            blocs.remove(bloc)
-            xballe = -xballe
-        if yballe == by or yballe == by + 9 and bx + 9 > xballe > bx :
-            blocs.remove(bloc)
-            yballe = -yballe
-        if yballe == by or yballe == by + 9 and xballe == bx or xballe == bx + 9 :
-            yballe = -yballe
-            xballe= -xballe
-    
+        if by + 9 >= yballe >= by and xballe == bx / # cote gauche
+        or by + 9 >= yballe >= by and xballe == bx + 9 / # cote droit     
+        or yballe == by + 9 and bx + 9 >= xballe >= bx / # bas
+        or yballe == by and bx + 9 >= xballe >= bx : # haut
+            if bloc[2] == 8 :
+                blocs.remove(bloc)
+                if by + 9 >= yballe >= by and xballe == bx :
+                    xballe = -xballe
+                if by + 9 >= yballe >= by and xballe == bx + 9 :
+                    xballe = -xballe
+                if yballe == by + 9 and bx + 9 >= xballe >= bx :
+                    yballe = -yballe
+                if yballe == by and bx + 9 >= xballe >= bx :
+                    yballe = -yballe
     return x, y
 
 # =========================================================
