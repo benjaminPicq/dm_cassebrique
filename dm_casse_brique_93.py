@@ -27,7 +27,7 @@ by = 5
 by1 = 15
 by2 = 25
 
-blocs = [ [[bx, by], [bx1, by], [bx2, by], [bx3, by], [bx4, by], [bx5, by], [bx6, by], [bx, by1], [bx1, by1], [[bx2, by1], [bx3, by1], [bx4, by1], [bx5, by1], [bx6, by1], [bx, by2], [bx1, by2], [[bx2, by2], [bx3, by2], [bx4, by2], [bx5, by2], [bx6, by2]] ]
+blocs = [ [[bx, by], [bx1, by], [bx2, by], [bx3, by], [bx4, by], [bx5, by], [bx6, by], [bx, by1], [bx1, by1], [bx2, by1], [bx3, by1], [bx4, by1], [bx5, by1], [bx6, by1], [bx, by2], [bx1, by2], [bx2, by2], [bx3, by2], [bx4, by2], [bx5, by2], [bx6, by2]] ]
     
 def plateau_deplacement(x, y):
     """déplacement avec les touches de directions"""
