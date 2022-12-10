@@ -12,8 +12,8 @@ balle_x = 60
 balle_y = 90
 
 # vitesse de la balle
-xballe = 3
-yballe = 3
+xballe = 1
+yballe = 1
 
 blocs_x = [30, 40, 50, 60, 70, 80, 90]
 blocs_y = [5, 5, 5, 5, 5, 5, 5]
@@ -98,7 +98,9 @@ def blocs_suppression(x, y) :
             yballe = -yballe
         if 5 < balle_y < (14) :
             xballe = -xballe
-  
+    else : 
+        xballe = xballe
+        yballe = yballe
     return x, y
 
 # =========================================================
