@@ -119,7 +119,119 @@ def blocs_suppression(x, y) :
             xballe = -xballe
         if balle_x == 90 or balle_x == 99 and balle_y == 5 or balle_y == 15 :
             xballe = -xballe
-            yballe = -yballe       
+            yballe = -yballe 
+    if (39) >= x >= (30) and (25) >= y >= (15) :
+        if balle_y == 25 or balle_y == 15 :
+            yballe = -yballe
+        if balle_x == 30 or balle_x == 39 :
+            xballe = -xballe
+        if balle_x == 30 or balle_x == 39 and balle_y == 15 or balle_y == 25 :
+            xballe = -xballe
+            yballe = -yballe
+    if (49) >= x >= (40) and (25) >= y >= (15) :
+        if balle_y == 15 or balle_y == 25 :
+            yballe = -yballe
+        if balle_x == 40 or balle_x == 49 :
+            xballe = -xballe
+        if balle_x == 40 or balle_x == 49 and balle_y == 25 or balle_y == 15 :
+            xballe = -xballe
+            yballe = -yballe
+    if (59) >= x >= (50) and (25) >= y >= (15) :
+        if balle_y == 15 or balle_y == 25 :
+            yballe = -yballe
+        if balle_x == 50 or balle_x == 59 :
+            xballe = -xballe
+        if balle_x == 50 or balle_x == 59 and balle_y == 25 or balle_y == 15 :
+            xballe = -xballe
+            yballe = -yballe
+    if (69) >= x >= (60) and (25) >= y >= (15) :
+        if balle_y == 15 or balle_y == 25 :
+            yballe = -yballe
+        if balle_x == 60 or balle_x == 69 :
+            xballe = -xballe
+        if balle_x == 60 or balle_x == 69 and balle_y == 25 or balle_y == 15 :
+            xballe = -xballe
+            yballe = -yballe
+    if (79) >= x >= (70) and (25) >= y >= (15) :
+        if balle_y == 15 or balle_y == 25 :
+            yballe = -yballe
+        if balle_x == 70 or balle_x == 39 :
+            xballe = -xballe
+        if balle_x == 70 or balle_x == 79 and balle_y == 25 or balle_y == 15 :
+            xballe = -xballe
+            yballe = -yballe
+    if (89) >= x >= (80) and (25) >= y >= (15) :
+        if balle_y == 15 or balle_y == 25 :
+            yballe = -yballe
+        if balle_x == 80 or balle_x == 89 :
+            xballe = -xballe
+        if balle_x == 80 or balle_x == 89 and balle_y == 25 or balle_y == 15 :
+            xballe = -xballe
+            yballe = -yballe
+    if (99) >= x >= (90) and (25) >= y >= (15) :
+        if balle_y == 15 or balle_y == 25 :
+            yballe = -yballe
+        if balle_x == 90 or balle_x == 99 :
+            xballe = -xballe
+        if balle_x == 90 or balle_x == 99 and balle_y == 25 or balle_y == 15 :
+            xballe = -xballe
+            yballe = -yballe      
+    if (39) >= x >= (30) and (35) >= y >= (25) :
+        if balle_y == 25 or balle_y == 35 :
+            yballe = -yballe
+        if balle_x == 30 or balle_x == 39 :
+            xballe = -xballe
+        if balle_x == 30 or balle_x == 39 and balle_y == 35 or balle_y == 25 :
+            xballe = -xballe
+            yballe = -yballe
+    if (49) >= x >= (40) and (35) >= y >= (25) :
+        if balle_y == 35 or balle_y == 25 :
+            yballe = -yballe
+        if balle_x == 40 or balle_x == 49 :
+            xballe = -xballe
+        if balle_x == 40 or balle_x == 49 and balle_y == 25 or balle_y == 35 :
+            xballe = -xballe
+            yballe = -yballe
+    if (59) >= x >= (50) and (35) >= y >= (25) :
+        if balle_y == 35 or balle_y == 25 :
+            yballe = -yballe
+        if balle_x == 50 or balle_x == 59 :
+            xballe = -xballe
+        if balle_x == 50 or balle_x == 59 and balle_y == 25 or balle_y == 35 :
+            xballe = -xballe
+            yballe = -yballe
+    if (69) >= x >= (60) and (35) >= y >= (25) :
+        if balle_y == 35 or balle_y == 25 :
+            yballe = -yballe
+        if balle_x == 60 or balle_x == 69 :
+            xballe = -xballe
+        if balle_x == 60 or balle_x == 69 and balle_y == 25 or balle_y == 35 :
+            xballe = -xballe
+            yballe = -yballe
+    if (79) >= x >= (70) and (35) >= y >= (25) :
+        if balle_y == 35 or balle_y == 25 :
+            yballe = -yballe
+        if balle_x == 70 or balle_x == 39 :
+            xballe = -xballe
+        if balle_x == 70 or balle_x == 79 and balle_y == 25 or balle_y == 35 :
+            xballe = -xballe
+            yballe = -yballe
+    if (89) >= x >= (80) and (35) >= y >= (25) :
+        if balle_y == 35 or balle_y == 25 :
+            yballe = -yballe
+        if balle_x == 80 or balle_x == 89 :
+            xballe = -xballe
+        if balle_x == 80 or balle_x == 89 and balle_y == 25 or balle_y == 35 :
+            xballe = -xballe
+            yballe = -yballe
+    if (99) >= x >= (90) and (35) >= y >= (25) :
+        if balle_y == 35 or balle_y == 25 :
+            yballe = -yballe
+        if balle_x == 90 or balle_x == 99 :
+            xballe = -xballe
+        if balle_x == 90 or balle_x == 99 and balle_y == 25 or balle_y == 35 :
+            xballe = -xballe
+            yballe = -yballe                      
     else : 
         xballe = xballe
         yballe = yballe
