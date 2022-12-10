@@ -67,6 +67,8 @@ def blocs_suppression(x, y) :
     if (99) >= x >= (30) and (15) >= y >= (5) :
         if balle_y == 15 or balle_y == 5 :
             yballe = -yballe
+        if balle_x == 30 or balle_x == 99 :
+            xballe = -xballe
         
     else : 
         xballe = xballe
