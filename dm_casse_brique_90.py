@@ -282,18 +282,18 @@ def draw():
         pyxel.circ(balle_x, balle_y, 3, 10)
         
         # blocs 9x9 couleur 8 sur trois lignes
-            for bloc in range(0, len(blocs_x)) :
-                blx = blocs_x[bloc-1]
-                bly = blocs_y[bloc-1]
-                pyxel.rect(blx, bly, 9, 9)
-            for bloc in range(0, len(blocs_x1)) :
-                blx1 = blocs_x1[bloc-1]
-                bly1 = blocs_y1[bloc-1]
-                pyxel.rect(blx1, bly1, 9, 9, 8)
-            for bloc in range(0, len(blocs_x2)) :
-                blx2 = blocs_x2[bloc-1]
-                bly2 = blocs_y2[bloc-1]
-                pyxel.rect(blx2, bly2, 9, 9, 8)
+        for bloc in range(0, len(blocs_x)) :
+            blx = blocs_x[bloc-1]
+            bly = blocs_y[bloc-1]
+            pyxel.rect(blx, bly, 9, 9)
+        for bloc in range(0, len(blocs_x1)) :
+            blx1 = blocs_x1[bloc-1]
+            bly1 = blocs_y1[bloc-1]
+            pyxel.rect(blx1, bly1, 9, 9, 8)
+        for bloc in range(0, len(blocs_x2)) :
+            blx2 = blocs_x2[bloc-1]
+            bly2 = blocs_y2[bloc-1]
+            pyxel.rect(blx2, bly2, 9, 9, 8)
 
     else :
         pyxel.text(50,64, 'GAME OVER', 12)
