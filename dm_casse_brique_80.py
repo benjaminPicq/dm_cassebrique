@@ -60,10 +60,8 @@ def balle_deplacement(x, y) :
 
 def blocs_suppression(x, y) :
     global xballe, yballe, blocs_x, blocs_y, blocs_x1, blocs_y1, blocs_x2, blocs_y2
-    
-    gam = True
-    y -= yballe
     x -= xballe
+    y -= yballe
     
     if (39) >= x >= (30) and (14) >= y >= (5) :
         if balle_y == 14 or balle_y == 5 :
@@ -109,10 +107,7 @@ def blocs_suppression(x, y) :
 def update():
     """mise à jour des variables (30 fois par seconde)"""
 
-    global plateau_x, plateau_y, balle_x, balle_y, vies, games
-    
-    # mise à jour des vies et de l'etat du jeu (si on peut jouer ou pas
-    vies, game = vie(vies, game)
+    global plateau_x, plateau_y, balle_x, balle_y
     
     # mise à jour de la position du plateau
     plateau_x, plateau_y = plateau_deplacement(plateau_x, plateau_y)
@@ -133,7 +128,7 @@ def draw():
     pyxel.cls(0)
     
     # si la balle est sur l'ecran 128x128
-    if balle_y <= 128 or game == True :
+    if balle_y <= 128 :
         # polygone de 6 cotes
         pyxel.rect(plateau_x, plateau_y, 11, 12, 14)
         pyxel.tri(plateau_x, plateau_y, plateau_x, plateau_y+11, plateau_x-11, plateau_y+11, 14)
