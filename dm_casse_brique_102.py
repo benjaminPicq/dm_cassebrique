@@ -68,7 +68,7 @@ def balle_deplacement(x, y) :
         by = bloc[1]
         if by + 9 >= yballe >= by and xballe == bx or by + 9 >= yballe >= by and xballe == bx + 9 or yballe == by + 9 and bx + 9 >= xballe >= bx or yballe == by and bx + 9 >= xballe >= bx :
             if bloc[2] == 8 :
-                blocs.remove(bloc)
+                blocs[level].remove(bloc)
                 if by + 9 >= yballe >= by and xballe == bx :
                     xballe = -xballe
                 if by + 9 >= yballe >= by and xballe == bx + 9 :
