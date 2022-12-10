@@ -64,14 +64,21 @@ def blocs_suppression(x, y) :
     x -= xballe
     y -= yballe
     
-    if (39) >= x >= (30) and (15) >= y >= (5) :
-        if balle_y == 15 or balle_y == 5 :
-            yballe = -yballe
-        if balle_x == 30 or balle_x == 39 :
-            xballe = -xballe
-        if balle_x == 30 or balle_x == 39 and balle_y == 5 or balle_y == 15 :
-            xballe = -xballe
-            yballe = -yballe
+    if blocs_x.index(30) == 0 :
+        if (39) >= x >= (30) and (15) >= y >= (5) :
+            if balle_y == 15 or balle_y == 5 :
+                yballe = -yballe
+            if balle_x == 30 or balle_x == 39 :
+                xballe = -xballe
+            if balle_x == 30 or balle_x == 39 and balle_y == 5 or balle_y == 15 :
+                xballe = -xballe
+                yballe = -yballe
+            bx = blocs_x.index(30)
+            by = blocs_y.index(5)
+            blocs_x.pop(bx)
+            blocs_y.pop(by)
+    else :
+        blocs_x.append(1)
     if (49) >= x >= (40) and (15) >= y >= (5) :
         if balle_y == 15 or balle_y == 5 :
             yballe = -yballe
@@ -275,18 +282,19 @@ def draw():
         pyxel.circ(balle_x, balle_y, 3, 10)
         
         # blocs 9x9 couleur 8 sur trois lignes
-        for bloc in range(0, len(blocs_x)) :
-            bx = blocs_x[bloc-1]
-            by = blocs_y[bloc-1]
-            pyxel.rect(bx, by, 9, 9, 8)
-        for bloc in range(0, len(blocs_x1)) :
-            bx1 = blocs_x1[bloc-1]
-            by1 = blocs_y1[bloc-1]
-            pyxel.rect(bx1, by1, 9, 9, 8)
-        for bloc in range(0, len(blocs_x2)) :
-            bx2 = blocs_x2[bloc-1]
-            by2 = blocs_y2[bloc-1]
-            pyxel.rect(bx2, by2, 9, 9, 8)
+        for m in range(1) :
+            for bloc in range(0, len(blocs_x)) :
+                blx = blocs_x[bloc-1]
+                bly = blocs_y[bloc-1]
+                pyxel.rect(blx, bly, 9, 9)
+            for bloc in range(0, len(blocs_x1)) :
+                blx1 = blocs_x1[bloc-1]
+                bly1 = blocs_y1[bloc-1]
+                pyxel.rect(blx1, bly1, 9, 9, 8)
+            for bloc in range(0, len(blocs_x2)) :
+                blx2 = blocs_x2[bloc-1]
+                bly2 = blocs_y2[bloc-1]
+                pyxel.rect(blx2, bly2, 9, 9, 8)
 
     else :
         pyxel.text(50,64, 'GAME OVER', 12)
