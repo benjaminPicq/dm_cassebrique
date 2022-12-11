@@ -20,6 +20,7 @@ nmbr_bl = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20
 blocsx = [30, 40, 50, 60, 70, 80, 90, 30, 40, 50, 60, 70, 80, 90, 30, 40, 50, 60, 70, 80, 90]
 blocsy = [5, 5, 5, 5, 5, 5, 5, 15, 15, 15, 15, 15, 15, 15, 25, 25, 25, 25, 25, 25, 25]
 c = [8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8]
+
  
 def plateau_deplacement(x, y):
     """déplacement avec les touches de directions"""
@@ -59,9 +60,10 @@ def balle_deplacement(x, y) :
 
 def blocs_suppression() :
     for m in range(0, len(nmbr_bl)) :
-        if blocsx[m] <= balle_x <= blocsx[m] + 9 and blocsy[m] <= balle_y <= blocsy[m] + 9 :
+        if blocsx[m] <= balle_x <= (blocsx[m] + 9) and blocsy[m] <= balle_y <= (blocsy[m] + 9) :
             blocsx.pop(m)
             blocsy.pop(m)
+            nmbr_bl.pop[0}
             yballe = -yballe
     return
 # =========================================================
