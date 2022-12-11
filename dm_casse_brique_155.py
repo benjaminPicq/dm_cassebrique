@@ -57,7 +57,7 @@ def balle_deplacement(x, y) :
             xballe = -xballe
 
     for n in range(0, len(nmbr_bl)) :
-        if blocsx[n] <= x <= (blocsx[n] + 9) and blocsy[n] <= y <= (blocsy[n] :
+        if blocsx[n] <= x <= (blocsx[n] + 9) and blocsy[n] <= y <= (blocsy[n] + 9) :
             blocsx.pop(n)
             blocsy.pop(n)
             c.pop(0)
