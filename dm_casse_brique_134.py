@@ -16,19 +16,10 @@ xballe = 1
 yballe = 1
 
 # coordonnes des blocs
-bx = [30, 40, 50, 60, 70, 80, 90]
-by = [5, 5, 5, 5, 5, 5, 5]
-bx1 = [30, 40, 50, 60, 70, 80, 90]
-by1 = [15, 15, 15, 15, 15, 15, 15]
-by2 = [25, 25, 25, 25, 25, 25, 25]
-bx2 = [30, 40, 50, 60, 70, 80, 90]
 nmbr_bl : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
-bx_ = [39, 49, 59, 69, 79, 89, 99]
-by_ = [14, 14, 14, 14, 14, 14, 14]
-bx1_ = [39, 49, 59, 69, 79, 89, 99]
-by1_ = [24, 24, 24, 24, 24, 24, 24]
-bx2_ = [39, 49, 59, 69, 79, 89, 99]
-by2_ = [34, 34, 34, 34, 34, 34, 34]
+blocsx = [30, 40, 50, 60, 70, 80, 90, 30, 40, 50, 60, 70, 80, 90, 30, 40, 50, 60, 70, 80, 90]
+blocsy[5, 5, 5, 5, 5, 5, 5, 15, 15, 15, 15, 15, 15, 15, 25, 25, 25, 25, 25, 25, 25]
+c = [8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8]
  
 def plateau_deplacement(x, y):
     """déplacement avec les touches de directions"""
@@ -102,8 +93,8 @@ def draw():
         pyxel.circ(balle_x, balle_y, 3, 10)
         
         # blocs 9x9 couleur 8 sur trois lignes
-        for bloc in blocs :
-            pyxel.rect(bloc[0], bloc[1], l, lo, bloc[2])
+        for n in range(0, len(nmbr_bl)) :
+            pyxel.rect(blocsx, blocsy, 9, 9, c)
 
     else :
         pyxel.text(50,64, 'GAME OVER', 12)
