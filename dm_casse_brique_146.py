@@ -63,7 +63,7 @@ def blocs_suppression() :
         if blocsx[m] <= balle_x <= (blocsx[m] + 9) and blocsy[m] <= balle_y <= (blocsy[m] + 9) :
             blocsx.pop(m)
             blocsy.pop(m)
-            nmbr_bl.pop[0}
+            nmbr_bl.pop[0]
             yballe = -yballe
     return
 # =========================================================
