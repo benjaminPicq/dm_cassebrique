@@ -87,18 +87,17 @@ def update():
 
     global plateau_x, plateau_y, balle_x, balle_y
     
-    if pyxel.btnr(pyxel.KEY_SPACE):
-        jeu = True
-    
-    if jeu == True :
-        # mise à jour de la position du plateau
+    if jeu == False :
         plateau_x, plateau_y = plateau_deplacement(plateau_x, plateau_y)
+        if pyxel.btnr(pyxel.KEY_SPACE):
+            jeu = True
     
-        # mise à jour de la position de la balle
-        balle_x, balle_y = balle_deplacement(balle_x, balle_y)
+        elif jeu == True :
+            # mise à jour de la position du plateau
+            plateau_x, plateau_y = plateau_deplacement(plateau_x, plateau_y)
     
-    else :
-        plateau_x, plateau_y = plateau_deplacement(plateau_x, plateau_y)
+            # mise à jour de la position de la balle
+            balle_x, balle_y = balle_deplacement(balle_x, balle_y)
 # =========================================================
 # == DRAW
 # =========================================================
