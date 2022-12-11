@@ -29,7 +29,9 @@ by2 = 25
 l = 9
 lo = 9
 blocs = [ [bx, by, 8], [bx1, by, 8], [bx2, by, 8], [bx3, by, 8], [bx4, by, 8], [bx5, by, 8], [bx6, by, 8], [bx, by1, 8], [bx1, by1, 8], [bx2, by1, 8], [bx3, by1, 8], [bx4, by1, 8], [bx5, by1, 8], [bx6, by1, 8], [bx, by2, 8], [bx1, by2, 8], [bx2, by2, 8], [bx3, by2, 8], [bx4, by2, 8], [bx5, by2, 8], [bx6, by2, 8] ]
-    
+ 
+n = False
+m = False
 def plateau_deplacement(x, y):
     """déplacement avec les touches de directions"""
     
@@ -83,14 +85,14 @@ def blocs_suppression(x, y) :
         if x <= xballe <= x + 9 and yballe == y + 9 :
             blocs.remove(bloc[0], bloc[1])
             n = True
-        if m = True :
+        if m == True :
             xballe = -xballe
-        if n = True :
+        if n == True :
             yballe = -yballe
-        if n = True and m = True :
+        if n == True and m == True :
             xballe = -xballe
             yballe = -yballe
-        if n = False and m = False :
+        if n == False and m == False :
             xballe = xballe
             yballe = yballe
     return x, y
