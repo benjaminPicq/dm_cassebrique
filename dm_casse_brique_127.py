@@ -77,7 +77,7 @@ def blocs_suppression(bl) :
         y -= yballe
         if xballe == x and y <= yballe <= y + 9 or xballe == x + 9 and y <= yballe <= y + 9 or x <= xballe <= x + 9 and yballe == y \
         or x <= xballe <= x + 9 and yballe == y + 9 :
-            blocs.remove(bloc[0], bloc[1])
+            blocs.remove(bloc[0], bloc[1], bloc[2])
     return bl
 # =========================================================
 # == UPDATE
