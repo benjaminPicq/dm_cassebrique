@@ -94,7 +94,7 @@ def draw():
         
         # blocs 9x9 couleur 8 sur trois lignes
         for n in range(0, len(nmbr_bl)) :
-            pyxel.rect(blocsx, blocsy, 9, 9, c)
+            pyxel.rect(blocsx[i], blocsy[i], 9, 9, c[i])
 
     else :
         pyxel.text(50,64, 'GAME OVER', 12)
