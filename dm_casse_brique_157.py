@@ -22,7 +22,7 @@ blocsy = [5, 5, 5, 5, 5, 5, 5, 15, 15, 15, 15, 15, 15, 15, 25, 25, 25, 25, 25, 2
 c = [8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8]
 
 vies = 3
-score = 0
+
 
  
 def plateau_deplacement(x, y):
@@ -63,7 +63,7 @@ def balle_deplacement(x, y) :
             c.pop(0)
             nmbr_bl.pop(0)
             yballe = -yballe
-
+            score += 10
     
     else:
         xballe = xballe
@@ -112,8 +112,12 @@ def draw():
     for n in range(0, len(nmbr_bl)) :
         pyxel.rect(blocsx[n], blocsy[n], 9, 2, c[n])
     
+    # affichage du score
+    if score == 210 :
+        pyxel.text(50, 64, 'Victory', 12)
+    
     # affichage des vies                                                                
-    pyxel.text(100,10, 'vies : %s' % str(vies), 11)
+    pyxel.text(100,10, 'vies : %d' % vies, 11)
     
     # si il ne reste plus de vies, alors le joueur a perdu                                                                
     if vies == 0 :
