@@ -58,16 +58,16 @@ def balle_deplacement(x, y) :
     
     return x, y
 
-def blocs_suppression() :
-    global balle_x, balle_y, yballe, blocsx, blocsy, c, nmbr_bl
-    for m in range(0, len(nmbr_bl)) :
-        if blocsx[m] <= balle_x <= (blocsx[m] + 9) and blocsy[m] <= balle_y <= (blocsy[m] + 9) :
+def blocs_suppression(x, y) :
+    global yballe, blocsx, blocsy, c, nmbr_bl
+    for n in range(0, len(nmbr_bl)) :
+        if blocsx[n] <= balle_x <= (blocsx[n] + 9) and blocsy[n] <= balle_y <= (blocsy[n] + 9) :
             blocsx.pop(m)
             blocsy.pop(m)
             c.pop(0)
             nmbr_bl.pop(0)
             yballe = -yballe
-    return
+    return x, y
 # =========================================================
 # == UPDATE
 # =========================================================
@@ -83,6 +83,7 @@ def update():
 
     balle_x, balle_y = balle_deplacement(balle_x, balle_y)
     
+    balle_x, balle_y = blocs_suppression(balle_x, balle_y)
 # =========================================================
 # == DRAW
 # =========================================================
