@@ -37,7 +37,7 @@ def plateau_deplacement(x, y):
         if (x < 105) :
             x = x + 1
     if pyxel.btn(pyxel.KEY_LEFT):
-        if (x > 12) :
+        if (x > 10) :
             x = x - 1
     return x, y
 
@@ -66,6 +66,34 @@ def balle_deplacement(x, y) :
 
     return x, y
 
+def blocs_suppression(x, y) :
+    global blocs, xballe, yballe
+    for bloc in blocs :
+        x = bloc[0]
+        y = bloc[1]
+        if xballe == x and y <= yballe <= y + 9 :
+            blocs.remove(bloc[0], bloc[1])
+            m = True
+        if xballe == x + 9 and y <= yballe <= y + 9 :
+            blocs.remove(bloc[0], bloc[1])
+            m = True
+        if x <= xballe <= x + 9 and yballe == y :
+            blocs.remove(bloc[0], bloc[1])
+            n = True
+        if x <= xballe <= x + 9 and yballe == y + 9 :
+            blocs.remove(bloc[0], bloc[1])
+            n = True
+        if m = True :
+            xballe = -xballe
+        if n = True :
+            yballe = -yballe
+        if n = True and m = True :
+            xballe = -xballe
+            yballe = -yballe
+        if n = False and m = False :
+            xballe = xballe
+            yballe = yballe
+    return x, y
 # =========================================================
 # == UPDATE
 # =========================================================
@@ -80,6 +108,8 @@ def update():
     # mise à jour de la position de la balle
 
     balle_x, balle_y = balle_deplacement(balle_x, balle_y)
+    
+    balle_x, balle_y = blocs_suppression(balle_x, balle_y)
 # =========================================================
 # == DRAW
 # =========================================================
