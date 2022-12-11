@@ -21,11 +21,6 @@ blocsx = [30, 40, 50, 60, 70, 80, 90, 30, 40, 50, 60, 70, 80, 90, 30, 40, 50, 60
 blocsy = [5, 5, 5, 5, 5, 5, 5, 15, 15, 15, 15, 15, 15, 15, 25, 25, 25, 25, 25, 25, 25]
 c = [8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8]
 
-
-
-# defini si le joueur a commencé a jouer ou pas
-jeu = False
-
 def plateau_deplacement(x, y):
     """déplacement avec les touches de directions"""
     
@@ -85,7 +80,7 @@ def update():
     if pyxel.btnr(pyxel.KEY_SPACE):
         jeu = True
     
-    if jeu == True :
+    if jeu is True :
         # mise à jour de la position de la balle
         balle_x, balle_y = balle_deplacement(balle_x, balle_y)
 # =========================================================
