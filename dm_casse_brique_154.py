@@ -21,6 +21,9 @@ blocsx = [30, 40, 50, 60, 70, 80, 90, 30, 40, 50, 60, 70, 80, 90, 30, 40, 50, 60
 blocsy = [5, 5, 5, 5, 5, 5, 5, 15, 15, 15, 15, 15, 15, 15, 25, 25, 25, 25, 25, 25, 25]
 c = [8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8]
 
+vies = 3
+score = 0
+
  
 def plateau_deplacement(x, y):
     """déplacement avec les touches de directions"""
@@ -54,35 +57,23 @@ def balle_deplacement(x, y) :
             xballe = -xballe
 
     for n in range(0, len(nmbr_bl)) :
-        if blocsx[n] <= x <= (blocsx[n] + 9) and blocsy[n] == y :
+        if blocsx[n] <= x <= (blocsx[n] + 9) and blocsy[n] <= y <= (blocsy[n] :
             blocsx.pop(n)
             blocsy.pop(n)
             c.pop(0)
             nmbr_bl.pop(0)
             yballe = -yballe
-        elif blocsx[n] <= x <= (blocsx[n] + 9) and (blocsy[n] + 9) == y :
-            blocsx.pop(n)
-            blocsy.pop(n)
-            c.pop(0)
-            nmbr_bl.pop(0)
-        elif blocsx[n] == x and blocsy[n] <= y <= (blocsy[n] + 9) :
-            blocsx.pop(n)
-            blocsy.pop(n)
-            c.pop(0)
-            nmbr_bl.pop(0)
-            xballe = -xballe
-        elif (blocs[n] + 9) == x and blocsy[n] <= y <= (blocsy[n] + 9) :
-            blocsx.pop(n)
-            blocsy.pop(n)
-            c.pop(0)
-            nmbr_bl.pop(0)
-            xballe = -xballe
+
     
     else:
         xballe = xballe
         yballe = yballe
     return x, y
 
+def vie(vies) :
+    if yballe >= 128 :
+        vies -= 1
+    return vies
 # =========================================================
 # == UPDATE
 # =========================================================
@@ -98,6 +89,7 @@ def update():
 
     balle_x, balle_y = balle_deplacement(balle_x, balle_y)
     
+    vies = vie(vies)
 # =========================================================
 # == DRAW
 # =========================================================
@@ -106,23 +98,26 @@ def draw():
 
     # vide la fenetre
     pyxel.cls(0)
-    
-    # si la balle est sur l'ecran 128x128
-    if balle_y <= 128 :
-        # polygone de 6 cotes
-        pyxel.rect(plateau_x, plateau_y, 11, 12, 14)
-        pyxel.tri(plateau_x, plateau_y, plateau_x, plateau_y+11, plateau_x-11, plateau_y+11, 14)
-        pyxel.tri(plateau_x+11, plateau_y, plateau_x+11, plateau_y+11, plateau_x+22, plateau_y+11, 14)
-        pyxel.rect(plateau_x-11, plateau_y+11, 34, 3, 14)
-    
-        # balle de rayon 3
-        pyxel.circ(balle_x, balle_y, 3, 10)
         
-        # blocs 9x9 couleur 8 sur trois lignes
-        for n in range(0, len(nmbr_bl)) :
-            pyxel.rect(blocsx[n], blocsy[n], 9, 9, c[n])
-
-    else :
+    # polygone de 6 cotes
+    pyxel.rect(plateau_x, plateau_y, 11, 12, 14)
+    pyxel.tri(plateau_x, plateau_y, plateau_x, plateau_y+11, plateau_x-11, plateau_y+11, 14)
+    pyxel.tri(plateau_x+11, plateau_y, plateau_x+11, plateau_y+11, plateau_x+22, plateau_y+11, 14)
+    pyxel.rect(plateau_x-11, plateau_y+11, 34, 3, 14)
+    
+    # balle de rayon 3
+    pyxel.circ(balle_x, balle_y, 3, 10)
+        
+    # blocs 9x2 couleur 8 sur trois lignes
+    for n in range(0, len(nmbr_bl)) :
+        pyxel.rect(blocsx[n], blocsy[n], 9, 2, c[n])
+    
+    # affichage des vies                                                                
+    pyxel.text(100,10, 'vies : %s ' % str(vies), 11)
+    
+    # si il ne reste plus de vies, alors le joueur a perdu                                                                
+    if vies == 0 :
+        pyxel.cls(0)
         pyxel.text(50,64, 'GAME OVER', 12)
     
 pyxel.run(update, draw)
