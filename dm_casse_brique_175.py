@@ -12,8 +12,8 @@ balle_x = 60
 balle_y = 98
 
 # vitesse de la balle
-xballe = 2
-yballe = 2
+xballe = 1
+yballe = 1
 
 # coordonnes des blocs
 nmbr_bl = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
@@ -64,6 +64,8 @@ def balle_deplacement(x, y) :
             nmbr_bl.pop(0)
             yballe = -yballe
             score += 10
+            xballe += 0.01
+            yballe += 0.01
     
     else:
         xballe = xballe
