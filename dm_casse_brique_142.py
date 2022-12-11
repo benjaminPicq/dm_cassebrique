@@ -57,6 +57,13 @@ def balle_deplacement(x, y) :
     
     return x, y
 
+def blocs_suppression() :
+    for m in range(0, len(nmbr_bl)) :
+        if blocsx[m] <= balle_x <= blocsx[m] + 9 and blocsy[m] <= balle_y <= blocsy[m] + 9 :
+            blocsx.remove(m)
+            blocsy.remove(m)
+            yballe = -yballe
+    return
 # =========================================================
 # == UPDATE
 # =========================================================
