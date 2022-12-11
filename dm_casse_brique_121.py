@@ -93,6 +93,9 @@ def blocs_suppression(x, y) :
             xballe = xballe
             yballe = yballe
         
+        if bloc[2] == 8 :
+            n = False
+            m = False
         if m == True :
             xballe = -xballe
         if n == True :
