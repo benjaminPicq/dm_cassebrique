@@ -77,12 +77,8 @@ def update():
     # mise à jour de la position du plateau
     plateau_x, plateau_y = plateau_deplacement(plateau_x, plateau_y)
         
-    if pyxel.btnr(pyxel.KEY_SPACE):
-        jeu = True
-    
-    if jeu is True :
-        # mise à jour de la position de la balle
-        balle_x, balle_y = balle_deplacement(balle_x, balle_y)
+    # mise à jour de la position de la balle
+    balle_x, balle_y = balle_deplacement(balle_x, balle_y)
 # =========================================================
 # == DRAW
 # =========================================================
@@ -91,18 +87,23 @@ def draw():
 
     # vide la fenetre
     pyxel.cls(0)
-        
-    # polygone de 6 cotes
-    pyxel.rect(plateau_x, plateau_y, 11, 12, 14)
-    pyxel.tri(plateau_x, plateau_y, plateau_x, plateau_y+11, plateau_x-11, plateau_y+11, 14)
-    pyxel.tri(plateau_x+11, plateau_y, plateau_x+11, plateau_y+11, plateau_x+22, plateau_y+11, 14)
-    pyxel.rect(plateau_x-11, plateau_y+11, 34, 3, 14)
     
-    # balle de rayon 3
-    pyxel.circ(balle_x, balle_y, 3, 10)
+    if yballe > 128 :
+        pyxel.cls(0)
+        pyxel.text(50,64, 'GAME OVER', 12)
+    
+    else :
+        # polygone de 6 cotes
+        pyxel.rect(plateau_x, plateau_y, 11, 12, 14)
+        pyxel.tri(plateau_x, plateau_y, plateau_x, plateau_y+11, plateau_x-11, plateau_y+11, 14)
+        pyxel.tri(plateau_x+11, plateau_y, plateau_x+11, plateau_y+11, plateau_x+22, plateau_y+11, 14)
+        pyxel.rect(plateau_x-11, plateau_y+11, 34, 3, 14)
+    
+        # balle de rayon 3
+        pyxel.circ(balle_x, balle_y, 3, 10)
         
-    # blocs 9x2 couleur 8 sur trois lignes
-    for n in range(0, len(nmbr_bl)) :
-        pyxel.rect(blocsx[n], blocsy[n], 9, 2, c[n])
-       
+        # blocs 9x2 couleur 8 sur trois lignes
+        for n in range(0, len(nmbr_bl)) :
+            pyxel.rect(blocsx[n], blocsy[n], 9, 2, c[n])
+    
 pyxel.run(update, draw)
