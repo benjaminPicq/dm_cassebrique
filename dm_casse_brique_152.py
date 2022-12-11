@@ -60,6 +60,18 @@ def balle_deplacement(x, y) :
             c.pop(0)
             nmbr_bl.pop(0)
             yballe = -yballe
+        elif blocsx[n] == x and blocsy[n] <= y <= (blocsy[n] + 9) :
+            blocsx.pop(n)
+            blocsy.pop(n)
+            c.pop(0)
+            nmbr_bl.pop(0)
+            xballe = -xballe
+        elif (blocs[n] + 9) == x and blocsy[n] <= y <= (blocsy[n] + 9) :
+            blocsx.pop(n)
+            blocsy.pop(n)
+            c.pop(0)
+            nmbr_bl.pop(0)
+            yballe = -yballe
     
     else:
         xballe = xballe
