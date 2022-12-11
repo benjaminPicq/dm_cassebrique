@@ -65,17 +65,20 @@ def balle_deplacement(x, y) :
     else:
         xballe = xballe
         yballe = yballe
-
+    return x, y
+   
+def blocs_suppression() :
     for bloc in blocs :
         bx = bloc[0]
         by = bloc[1]
+        x -= xballe
+        y -= yballe
         if xballe == bx and by <= yballe <= by + 9 or xballe == bx + 9 and by <= yballe <= by + 9 :
             blocs.remove(bloc)
             xballe = -xballe
         elif bx <= xballe <= bx + 9 and yballe == by or bx <= xballe <= bx + 9 and yballe == by + 9 :
             blocs.remove(bloc)
             yballe = -yballe
-    return x, y
 # =========================================================
 # == UPDATE
 # =========================================================
