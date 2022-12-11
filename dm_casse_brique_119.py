@@ -75,16 +75,20 @@ def blocs_suppression(x, y) :
         y = bloc[1]
         if xballe == x and y <= yballe <= y + 9 :
             blocs.remove(bloc[0], bloc[1])
-            m = True
+            if bloc[0] = 8 : 
+                m = True
         elif xballe == x + 9 and y <= yballe <= y + 9 :
             blocs.remove(bloc[0], bloc[1])
-            m = True
+            if bloc[0] == 8 :
+                m = True
         elif x <= xballe <= x + 9 and yballe == y :
             blocs.remove(bloc[0], bloc[1])
-            n = True
+            if bloc[0] == 8 :
+                n = True
         elif x <= xballe <= x + 9 and yballe == y + 9 :
             blocs.remove(bloc[0], bloc[1])
-            n = True
+            if bloc[0] == 8 :
+                n = True
         else :
             xballe = xballe
             yballe = yballe
