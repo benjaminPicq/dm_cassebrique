@@ -68,45 +68,20 @@ def balle_deplacement(x, y) :
 
     return x, y
 
-def blocs_suppression(x, y) :
+def blocs_suppression(bl) :
     global blocs, xballe, yballe
     for bloc in blocs :
         x = bloc[0]
         y = bloc[1]
         if xballe == x and y <= yballe <= y + 9 :
             blocs.remove(bloc[0], bloc[1])
-            if bloc[0] == 8 : 
-                m = True
-        elif xballe == x + 9 and y <= yballe <= y + 9 :
+        if xballe == x + 9 and y <= yballe <= y + 9 :
             blocs.remove(bloc[0], bloc[1])
-            if bloc[0] == 8 :
-                m = True
-        elif x <= xballe <= x + 9 and yballe == y :
+        if x <= xballe <= x + 9 and yballe == y :
             blocs.remove(bloc[0], bloc[1])
-            if bloc[0] == 8 :
-                n = True
-        elif x <= xballe <= x + 9 and yballe == y + 9 :
+        if x <= xballe <= x + 9 and yballe == y + 9 :
             blocs.remove(bloc[0], bloc[1])
-            if bloc[0] == 8 :
-                n = True
-        else :
-            xballe = xballe
-            yballe = yballe
-        
-        if bloc[2] == 8 :
-            n = False
-            m = False
-        if m == True :
-            xballe = -xballe
-        if n == True :
-            yballe = -yballe
-        if n == True and m == True :
-            xballe = -xballe
-            yballe = -yballe
-        if n == False and m == False :
-            xballe = xballe
-            yballe = yballe
-    return x, y
+    return bl
 # =========================================================
 # == UPDATE
 # =========================================================
@@ -122,7 +97,6 @@ def update():
 
     balle_x, balle_y = balle_deplacement(balle_x, balle_y)
     
-    balle_x, balle_y = blocs_suppression(balle_x, balle_y)
 # =========================================================
 # == DRAW
 # =========================================================
