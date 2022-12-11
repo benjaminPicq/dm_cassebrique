@@ -1,4 +1,4 @@
-import pyxel, random
+import pyxel
 # taille de la fenetre 128x128 pixels
 # ne pas modifier
 pyxel.init(128, 128, title="Nuit du c0de")
@@ -76,15 +76,19 @@ def blocs_suppression(x, y) :
         if xballe == x and y <= yballe <= y + 9 :
             blocs.remove(bloc[0], bloc[1])
             m = True
-        if xballe == x + 9 and y <= yballe <= y + 9 :
+        elif xballe == x + 9 and y <= yballe <= y + 9 :
             blocs.remove(bloc[0], bloc[1])
             m = True
-        if x <= xballe <= x + 9 and yballe == y :
+        elif x <= xballe <= x + 9 and yballe == y :
             blocs.remove(bloc[0], bloc[1])
             n = True
-        if x <= xballe <= x + 9 and yballe == y + 9 :
+        elif x <= xballe <= x + 9 and yballe == y + 9 :
             blocs.remove(bloc[0], bloc[1])
             n = True
+        else :
+            xballe = xballe
+            yballe = yballe
+        
         if m == True :
             xballe = -xballe
         if n == True :
