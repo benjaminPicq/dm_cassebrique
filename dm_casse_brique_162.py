@@ -21,8 +21,12 @@ blocsx = [30, 40, 50, 60, 70, 80, 90, 30, 40, 50, 60, 70, 80, 90, 30, 40, 50, 60
 blocsy = [5, 5, 5, 5, 5, 5, 5, 15, 15, 15, 15, 15, 15, 15, 25, 25, 25, 25, 25, 25, 25]
 c = [8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8]
 
+# variables sdu score et du temps
 vies = 3
 score =0 
+
+# defini si le joueur a commencé a jouer ou pas
+jeu = False
 
 def plateau_deplacement(x, y):
     """déplacement avec les touches de directions"""
@@ -83,13 +87,18 @@ def update():
 
     global plateau_x, plateau_y, balle_x, balle_y
     
-    # mise à jour de la position du plateau
-    plateau_x, plateau_y = plateau_deplacement(plateau_x, plateau_y)
+    if pyxel.btnr(pyxel.KEY_SPACE):
+        jeu = True
     
-    # mise à jour de la position de la balle
-
-    balle_x, balle_y = balle_deplacement(balle_x, balle_y)
+    if jeu == True :
+        # mise à jour de la position du plateau
+        plateau_x, plateau_y = plateau_deplacement(plateau_x, plateau_y)
     
+        # mise à jour de la position de la balle
+        balle_x, balle_y = balle_deplacement(balle_x, balle_y)
+    
+    else :
+        plateau_x, plateau_y = plateau_deplacement(plateau_x, plateau_y)
 # =========================================================
 # == DRAW
 # =========================================================
@@ -115,7 +124,7 @@ def draw():
     # si le joueur atteint 210 pts, alors il a gagne
     if score == 210 :
         pyxel.cls(0)
-        pyxel.text(50, 64, 'Victory', 12)
+        pyxel.text(50, 64, 'VICTORY', 12)
     
     # si il ne reste plus de vies, alors le joueur a perdu                                                                
     if vies == 0 :
