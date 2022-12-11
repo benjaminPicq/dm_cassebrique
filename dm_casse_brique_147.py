@@ -59,11 +59,13 @@ def balle_deplacement(x, y) :
     return x, y
 
 def blocs_suppression() :
+    global balle_x, balle_y, yballe, blocsx, blocsy, c, nmbr_bl
     for m in range(0, len(nmbr_bl)) :
         if blocsx[m] <= balle_x <= (blocsx[m] + 9) and blocsy[m] <= balle_y <= (blocsy[m] + 9) :
             blocsx.pop(m)
             blocsy.pop(m)
-            nmbr_bl.pop[0]
+            c.pop(0)
+            nmbr_bl.pop(0)
             yballe = -yballe
     return
 # =========================================================
