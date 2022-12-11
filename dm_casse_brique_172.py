@@ -12,8 +12,8 @@ balle_x = 60
 balle_y = 98
 
 # vitesse de la balle
-xballe = 4
-yballe = 4
+xballe = 1
+yballe = 1
 
 # coordonnes des blocs
 nmbr_bl = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
@@ -90,7 +90,7 @@ def update():
     
     # si le joueuer n'a pas commence a jouer ou s'il a perdu une vie
     if jeu == False :
-        balle_x, balle_y = (plateau_x + 17), (plateau_y - 12)
+        balle_x, balle_y = (plateau_x + 5), (plateau_y - 12)
         pyxel.text(50, 64, 'PRESS SPACE TO START', 11)
     
     # si le joueuer touche le bouton espace
