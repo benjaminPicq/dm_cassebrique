@@ -45,7 +45,7 @@ def plateau_deplacement(x, y):
 
 def balle_deplacement(x, y) :
     "mouvement de la balle si elle touche le plateau ou l'un des cotes sauf le bas"
-    global xballe, yballe, plateau_x, plateau_y
+    global xballe, yballe, plateau_x, plateau_y, blocs, bloc
     y -= yballe
     x -= xballe
     if (x < 3) or (x > 123):
@@ -66,10 +66,6 @@ def balle_deplacement(x, y) :
         xballe = xballe
         yballe = yballe
 
-    return x, y
-
-def blocs_suppression(x, y) :
-    global blocs, balle_x, balle_y
     for bloc in blocs :
         bx = bloc[0]
         by = bloc[1]
