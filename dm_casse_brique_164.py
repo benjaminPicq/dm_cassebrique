@@ -21,9 +21,7 @@ blocsx = [30, 40, 50, 60, 70, 80, 90, 30, 40, 50, 60, 70, 80, 90, 30, 40, 50, 60
 blocsy = [5, 5, 5, 5, 5, 5, 5, 15, 15, 15, 15, 15, 15, 15, 25, 25, 25, 25, 25, 25, 25]
 c = [8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8]
 
-# variables sdu score et du temps
-vies = 3
-score =0 
+
 
 # defini si le joueur a commencé a jouer ou pas
 jeu = False
@@ -73,12 +71,6 @@ def balle_deplacement(x, y) :
         yballe = yballe
     return x, y
 
-def vie() :
-    if yballe >= 128 :
-        vies -= 1
-        balle_x = 60
-        balle_y = 90
-    return 
 # =========================================================
 # == UPDATE
 # =========================================================
@@ -120,14 +112,6 @@ def draw():
     for n in range(0, len(nmbr_bl)) :
         pyxel.rect(blocsx[n], blocsy[n], 9, 2, c[n])
     
-    # si le joueur atteint 210 pts, alors il a gagne
-    if score == 210 :
-        pyxel.cls(0)
-        pyxel.text(50, 64, 'VICTORY', 12)
-    
-    # si il ne reste plus de vies, alors le joueur a perdu                                                                
-    if vies == 0 :
-        pyxel.cls(0)
-        pyxel.text(50,64, 'GAME OVER', 12)
+
     
 pyxel.run(update, draw)
