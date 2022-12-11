@@ -62,13 +62,14 @@ def balle_deplacement(x, y) :
         elif plateau_x <= x <= (plateau_x +15):
             yballe = -yballe
             xballe = -xballe
-    for bloc in blocs :
-        bx = bloc[0]
-        by = bloc[1]
-        if xballe == bx and by <= yballe <= by + 9 or xballe == bx + 9 and by <= yballe <= by + 9 :
-            xballe = -xballe
-        elif bx <= xballe <= bx + 9 and yballe == by or bx <= xballe <= bx + 9 and yballe == by + 9 :
-            yballe = -yballe
+    if (pyxel.frame_count % 30 == 0) :
+        for bloc in blocs :
+            ax = bloc[0]
+            ay = bloc[1]
+            if xballe == ax and ay <= yballe <= ay + 9 or xballe == ax + 9 and ay <= yballe <= ay + 9 :
+                xballe = -xballe
+            elif ax <= xballe <= ax + 9 and yballe == ay or ax <= xballe <= ax + 9 and yballe == ay + 9 :
+                yballe = -yballe
     else:
         xballe = xballe
         yballe = yballe
