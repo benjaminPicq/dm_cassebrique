@@ -9,7 +9,7 @@ plateau_y = 110
 
 # position initiale de la balle
 balle_x = 60
-balle_y = 90
+balle_y = 98
 
 # vitesse de la balle
 xballe = 1
@@ -88,10 +88,16 @@ def draw():
     # vide la fenetre
     pyxel.cls(0)
     
+    # si la balle sort su cadre
     if yballe > 128 :
         pyxel.cls(0)
         pyxel.text(50,64, 'GAME OVER', 12)
     
+    # si il ne reste plus de blocs
+    elif len(nmbr_bl) == 0 :
+        pyxel.cls(0)
+        pyxel.text(50, 64, 'VICTORY', 12)
+        
     else :
         # polygone de 6 cotes
         pyxel.rect(plateau_x, plateau_y, 11, 12, 14)
@@ -105,5 +111,5 @@ def draw():
         # blocs 9x2 couleur 8 sur trois lignes
         for n in range(0, len(nmbr_bl)) :
             pyxel.rect(blocsx[n], blocsy[n], 9, 2, c[n])
-    
+
 pyxel.run(update, draw)
