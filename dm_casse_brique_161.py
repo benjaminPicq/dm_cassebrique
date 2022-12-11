@@ -56,7 +56,7 @@ def balle_deplacement(x, y) :
             xballe = -xballe
 
     for n in range(0, len(nmbr_bl)) :
-        if blocsx[n] <= x <= (blocsx[n] + 9) and blocsy[n] <= y <= (blocsy[n] + 2) :
+        if blocsx[n] <= x <= (blocsx[n] + 12) and blocsy[n] <= y <= (blocsy[n] + 5) :
             blocsx.pop(n)
             blocsy.pop(n)
             c.pop(0)
@@ -72,6 +72,8 @@ def balle_deplacement(x, y) :
 def vie() :
     if yballe >= 128 :
         vies -= 1
+        balle_x = 60
+        balle_y = 90
     return 
 # =========================================================
 # == UPDATE
