@@ -79,17 +79,15 @@ def update():
 
     global plateau_x, plateau_y, balle_x, balle_y
     
-    if jeu == False :
-        plateau_x, plateau_y = plateau_deplacement(plateau_x, plateau_y)
-        if pyxel.btnr(pyxel.KEY_SPACE):
-            jeu = True
+    # mise à jour de la position du plateau
+    plateau_x, plateau_y = plateau_deplacement(plateau_x, plateau_y)
+        
+    if pyxel.btnr(pyxel.KEY_SPACE):
+        jeu = True
     
-        elif jeu == True :
-            # mise à jour de la position du plateau
-            plateau_x, plateau_y = plateau_deplacement(plateau_x, plateau_y)
-    
-            # mise à jour de la position de la balle
-            balle_x, balle_y = balle_deplacement(balle_x, balle_y)
+    if jeu == True :
+        # mise à jour de la position de la balle
+        balle_x, balle_y = balle_deplacement(balle_x, balle_y)
 # =========================================================
 # == DRAW
 # =========================================================
@@ -111,7 +109,5 @@ def draw():
     # blocs 9x2 couleur 8 sur trois lignes
     for n in range(0, len(nmbr_bl)) :
         pyxel.rect(blocsx[n], blocsy[n], 9, 2, c[n])
-    
-
-    
+       
 pyxel.run(update, draw)
