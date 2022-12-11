@@ -23,6 +23,7 @@ c = [8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8]
 
 vies = 3
 score = 0
+jeu = False
 
 def plateau_deplacement(x, y):
     """déplacement avec les touches de directions"""
