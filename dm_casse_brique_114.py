@@ -84,7 +84,7 @@ def suppression_blocs(x, y) :
     or bx_2[0] >= x >= bx_2[0] + 9 and y == bx_2[1] or bx_3[0] >= x >= bx_3[0] + 9 and y == bx_3[1] or bx_4[0] >= x >= bx_4[0] + 9 and y == bx_4[1] \
     or bx7[0] >= x >= bx7[0] + 9 and y == bx7[1] or bx8[0] >= x >= bx8[0] + 9 and y == bx8[1] or bx9[0] >= x >= bx9[0] + 9 and y == bx9[1] \
     or bx10[0] >= x >= bx10[0] + 9 and y == bx10[1] or bx11[0] >= x >= bx11[0] + 9 and y == bx11[1] or bx12[0] >= x >= bx12[0] + 9 and y == bx12[1] \
-    or bx13[0] >= x >= bx13[0] + 9 and y == bx13[1] or bx[0] >= x >= bx[0] and y == bx[1] or bx1[0] >= x >= bx1[0] and y == bx1[1] or :
+    or bx13[0] >= x >= bx13[0] + 9 and y == bx13[1] :
         xballe = -xballe
 # =========================================================
 # == UPDATE
