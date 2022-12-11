@@ -12,14 +12,17 @@ balle_x = 60
 balle_y = 98
 
 # vitesse de la balle
-xballe = 1
-yballe = 1
+xballe = 4
+yballe = 4
 
 # coordonnes des blocs
 nmbr_bl = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
 blocsx = [30, 40, 50, 60, 70, 80, 90, 30, 40, 50, 60, 70, 80, 90, 30, 40, 50, 60, 70, 80, 90]
 blocsy = [5, 5, 5, 5, 5, 5, 5, 15, 15, 15, 15, 15, 15, 15, 25, 25, 25, 25, 25, 25, 25]
 c = [8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8]
+
+vies = 3
+score = 0
 
 def plateau_deplacement(x, y):
     """déplacement avec les touches de directions"""
@@ -66,19 +69,36 @@ def balle_deplacement(x, y) :
         yballe = yballe
     return x, y
 
+def jeux(jeu, vies) :
+    global balle_y
+    if balle_y > 128 :
+        vies -= 1
+        jeu = False
+    return jeu, vies
 # =========================================================
 # == UPDATE
 # =========================================================
 def update():
     """mise à jour des variables (30 fois par seconde)"""
 
-    global plateau_x, plateau_y, balle_x, balle_y
+    global plateau_x, plateau_y, balle_x, balle_y, jeu, vies
     
+    jeu, vies = jeux(jeu, vies)
     # mise à jour de la position du plateau
     plateau_x, plateau_y = plateau_deplacement(plateau_x, plateau_y)
+    
+    # si le joueuer n'a pas commence a jouer ou s'il a perdu une vie
+    if jeu == False :
+        balle_x, balle_y = (plateau_x + 17), (plateau_y + 12)
+        pyxel.text(50, 64, 'PRESS SPACE TO START', 11)
+    
+    # si le joueuer touche le bouton espace
+    if pyxel.btnr(pyxel.KEY_SPACE):
+        game = True
         
-    # mise à jour de la position de la balle
-    balle_x, balle_y = balle_deplacement(balle_x, balle_y)
+    if game == True :
+        # mise à jour de la position de la balle
+        balle_x, balle_y = balle_deplacement(balle_x, balle_y)
 # =========================================================
 # == DRAW
 # =========================================================
@@ -89,7 +109,7 @@ def draw():
     pyxel.cls(0)
     
     # si la balle sort su cadre
-    if yballe > 128 :
+    if vies < 1 :
         pyxel.cls(0)
         pyxel.text(50,64, 'GAME OVER', 12)
     
