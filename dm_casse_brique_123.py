@@ -39,7 +39,7 @@ def plateau_deplacement(x, y):
         if (x < 105) :
             x = x + 1
     if pyxel.btn(pyxel.KEY_LEFT):
-        if (x > 10) :
+        if (x > 11) :
             x = x - 1
     return x, y
 
@@ -73,13 +73,7 @@ def blocs_suppression(bl) :
     for bloc in blocs :
         x = bloc[0]
         y = bloc[1]
-        if xballe == x and y <= yballe <= y + 9 :
-            blocs.remove(bloc[0], bloc[1])
-        if xballe == x + 9 and y <= yballe <= y + 9 :
-            blocs.remove(bloc[0], bloc[1])
-        if x <= xballe <= x + 9 and yballe == y :
-            blocs.remove(bloc[0], bloc[1])
-        if x <= xballe <= x + 9 and yballe == y + 9 :
+        if xballe == x and y <= yballe <= y + 9 or if xballe == x + 9 and y <= yballe <= y + 9 or if x <= xballe <= x + 9 and yballe == y if x <= xballe <= x + 9 and yballe == y + 9 :
             blocs.remove(bloc[0], bloc[1])
     return bl
 # =========================================================
