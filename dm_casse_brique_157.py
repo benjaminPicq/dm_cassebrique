@@ -22,9 +22,8 @@ blocsy = [5, 5, 5, 5, 5, 5, 5, 15, 15, 15, 15, 15, 15, 15, 25, 25, 25, 25, 25, 2
 c = [8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8]
 
 vies = 3
+score =0 
 
-
- 
 def plateau_deplacement(x, y):
     """déplacement avec les touches de directions"""
     
