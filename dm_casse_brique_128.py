@@ -68,17 +68,20 @@ def balle_deplacement(x, y) :
 
     return x, y
 
-def blocs_suppression(bl) :
+def blocs_suppression(x, y) :
     global blocs, balle_x, balle_y
     for bloc in blocs :
         bx = bloc[0]
         by = bloc[1]
         x -= xballe
         y -= yballe
-        if xballe == x and y <= yballe <= y + 9 or xballe == x + 9 and y <= yballe <= y + 9 or x <= xballe <= x + 9 and yballe == y \
-        or x <= xballe <= x + 9 and yballe == y + 9 :
-            blocs.remove(bloc[0], bloc[1], bloc[2])
-    return bl
+        if xballe == bx and by <= yballe <= by + 9 or xballe == bx + 9 and by <= yballe <= by + 9 :
+            blocs.remove(bloc)
+            xballe = -xballe
+        elif bx <= xballe <= bx + 9 and yballe == by or bx <= xballe <= bx + 9 and yballe == by + 9 :
+            blocs.remove(bloc)
+            yballe = -yballe
+    return x, y
 # =========================================================
 # == UPDATE
 # =========================================================
