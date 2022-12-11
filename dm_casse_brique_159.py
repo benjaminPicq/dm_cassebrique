@@ -69,10 +69,10 @@ def balle_deplacement(x, y) :
         yballe = yballe
     return x, y
 
-def vie(vies) :
+def vie() :
     if yballe >= 128 :
         vies -= 1
-    return vies
+    return 
 # =========================================================
 # == UPDATE
 # =========================================================
@@ -88,7 +88,6 @@ def update():
 
     balle_x, balle_y = balle_deplacement(balle_x, balle_y)
     
-    vies = vie(vies)
 # =========================================================
 # == DRAW
 # =========================================================
@@ -111,12 +110,10 @@ def draw():
     for n in range(0, len(nmbr_bl)) :
         pyxel.rect(blocsx[n], blocsy[n], 9, 2, c[n])
     
-    # affichage du score
+    # si le joueur atteint 210 pts, alors il a gagne
     if score == 210 :
+        pyxel.cls(0)
         pyxel.text(50, 64, 'Victory', 12)
-    
-    # affichage des vies                                                                
-    pyxel.text(100,10, 'vies : %d' % vies, 11)
     
     # si il ne reste plus de vies, alors le joueur a perdu                                                                
     if vies == 0 :
