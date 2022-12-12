@@ -112,7 +112,7 @@ def draw():
     pyxel.cls(0)
     
     if jeu == False :
-        pyxel.text(20, 64, 'PRESS SPACE TO START', 11)
+        pyxel.text(30, 74, 'PRESS SPACE TO START', 11)
         
     # si la balle sort su cadre
     if vies < 1 :
@@ -137,6 +137,7 @@ def draw():
         # affichage du nombre de vies
         pyxel.text(5, 60, f"Vies= {vies}", 6)
         
+        # affichage du score
         pyxel.text(5, 66, f"Score= {score}", 6)
         
         # blocs 9x2 couleur 8 sur trois lignes
