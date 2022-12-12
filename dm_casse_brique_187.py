@@ -22,7 +22,6 @@ blocsy = [5, 10, 5, 10, 5, 10, 5, 20, 15, 20, 15, 20, 15, 20, 25, 30, 25, 30, 25
 c = [8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8]
 
 vies = 3
-score = 0
 jeu = False
 
 def plateau_deplacement(x, y, score):
@@ -64,9 +63,9 @@ def balle_deplacement(x, y, score) :
             c.pop(0)
             nmbr_bl.pop(0)
             yballe = -yballe
-            xballe += 0.01
-            yballe += 0.01
-            score += 10
+            xballe += 0.05
+            yballe += 0.05
+
     else:
         xballe = xballe
         yballe = yballe
@@ -86,7 +85,7 @@ def jeux(jeu, vies) :
 def update():
     """mise à jour des variables (30 fois par seconde)"""
 
-    global plateau_x, plateau_y, balle_x, balle_y, jeu, vies, score
+    global plateau_x, plateau_y, balle_x, balle_y, jeu, vies
     
     jeu, vies = jeux(jeu, vies)
     
@@ -103,7 +102,7 @@ def update():
         
     if jeu == True :
         # mise à jour de la position de la balle
-        balle_x, balle_y, score = balle_deplacement(balle_x, balle_y, score)
+        balle_x, balle_y = balle_deplacement(balle_x, balle_y)
 # =========================================================
 # == DRAW
 # =========================================================
@@ -138,9 +137,6 @@ def draw():
        
         # affichage du nombre de vies
         pyxel.text(5, 60, f"Vies= {vies}", 6)
-        
-        # affichage du score
-        pyxel.text(5, 66, f"Score= {score}", 6)
         
         # blocs 9x2 couleur 8 sur trois lignes
         for n in range(0, len(nmbr_bl)) :
