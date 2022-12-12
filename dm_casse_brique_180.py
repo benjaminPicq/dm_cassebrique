@@ -47,15 +47,15 @@ def balle_deplacement(x, y) :
         yballe = -yballe
     
     if (plateau_y + 7) >= y >= (plateau_y -5) and (plateau_x) <= x <= (plateau_x + 10) :
-        yballe = (-yballe + 0.05)
-        xballe = (xballe + 0.05)
+        yballe = -yballe 
+        xballe = xballe 
     if (106) <= y < (128) :
         if (plateau_x -17) <= x <= (plateau_x) or (plateau_x + 17) <= x <= (plateau_x + 25):
-            xballe = (-xballe + 0.05)
-            yballe = (-yballe + 0.05)
+            xballe = -xballe
+            yballe = -yballe
         elif plateau_x <= x <= (plateau_x +15):
-            yballe = (-yballe + 0.05)
-            xballe = (-xballe + 0.05)
+            yballe = -yballe
+            xballe = -xballe
 
     for n in range(0, len(nmbr_bl)) :
         if blocsx[n] <= x <= (blocsx[n] + 12) and blocsy[n] <= y <= (blocsy[n] + 5) :
@@ -133,6 +133,9 @@ def draw():
     
         # balle de rayon 3
         pyxel.circ(balle_x, balle_y, 3, 10)
+       
+        # affichage du nombre de vies
+        pyxel.text(5, 4, f"Vies: {vies}", 11)
         
         # blocs 9x2 couleur 8 sur trois lignes
         for n in range(0, len(nmbr_bl)) :
