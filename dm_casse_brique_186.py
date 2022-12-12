@@ -36,7 +36,7 @@ def plateau_deplacement(x, y, score):
             x = x - 1
     return x, y
 
-def balle_deplacement(x, y) :
+def balle_deplacement(x, y, score) :
     "mouvement de la balle si elle touche le plateau ou l'un des cotes sauf le bas"
     global xballe, yballe, plateau_x, plateau_y
     y -= yballe
@@ -66,12 +66,12 @@ def balle_deplacement(x, y) :
             yballe = -yballe
             xballe += 0.01
             yballe += 0.01
-    
+            score += 10
     else:
         xballe = xballe
         yballe = yballe
         
-    return x, y
+    return x, y, score
 
 def jeux(jeu, vies) :
     global balle_y
@@ -80,12 +80,6 @@ def jeux(jeu, vies) :
         jeu = False
     return jeu, vies
 
-def points(score) :
-    global blocsx, blocsy
-    for n in range(0, len(nmbr_bl)) :
-        if blocsx[n] <= x <= (blocsx[n] + 12) and blocsy[n] <= y <= (blocsy[n] + 5) :
-            score += 10
-    return score
 # =========================================================
 # == UPDATE
 # =========================================================
@@ -99,11 +93,9 @@ def update():
     # mise à jour de la position du plateau
     plateau_x, plateau_y = plateau_deplacement(plateau_x, plateau_y)
     
-    score = points(score)
-    
     # si le joueuer n'a pas commence a jouer ou s'il a perdu une vie
     if jeu == False :
-        balle_x, balle_y = (plateau_x + 5), (plateau_y - 12)
+        balle_x, balle_y= (plateau_x + 5), (plateau_y - 12)
     
     # si le joueuer touche le bouton espace
     if pyxel.btnr(pyxel.KEY_SPACE):
