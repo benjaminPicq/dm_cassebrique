@@ -22,9 +22,10 @@ blocsy = [5, 10, 5, 10, 5, 10, 5, 20, 15, 20, 15, 20, 15, 20, 25, 30, 25, 30, 25
 c = [8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8]
 
 vies = 3
+score = 0
 jeu = False
 
-def plateau_deplacement(x, y, score):
+def plateau_deplacement(x, y):
     """déplacement avec les touches de directions"""
     
     if pyxel.btn(pyxel.KEY_RIGHT):
@@ -62,13 +63,14 @@ def balle_deplacement(x, y) :
             blocsy.pop(n)
             c.pop(0)
             nmbr_bl.pop(0)
-            yballe = (-yballe + 0.05)
-            xballe += 0.05
-
+            yballe = -yballe
+            score += 10
+            xballe += 0.01
+            yballe += 0.01
+    
     else:
         xballe = xballe
         yballe = yballe
-        
     return x, y
 
 def jeux(jeu, vies) :
@@ -77,7 +79,6 @@ def jeux(jeu, vies) :
         vies -= 1
         jeu = False
     return jeu, vies
-
 # =========================================================
 # == UPDATE
 # =========================================================
@@ -87,13 +88,12 @@ def update():
     global plateau_x, plateau_y, balle_x, balle_y, jeu, vies
     
     jeu, vies = jeux(jeu, vies)
-    
     # mise à jour de la position du plateau
     plateau_x, plateau_y = plateau_deplacement(plateau_x, plateau_y)
     
     # si le joueuer n'a pas commence a jouer ou s'il a perdu une vie
     if jeu == False :
-        balle_x, balle_y= (plateau_x + 5), (plateau_y - 12)
+        balle_x, balle_y = (plateau_x + 5), (plateau_y - 12)
     
     # si le joueuer touche le bouton espace
     if pyxel.btnr(pyxel.KEY_SPACE):
@@ -112,7 +112,7 @@ def draw():
     pyxel.cls(0)
     
     if jeu == False :
-        pyxel.text(30, 74, 'PRESS SPACE TO START', 11)
+        pyxel.text(25, 74, 'PRESS SPACE TO START', 11)
         
     # si la balle sort su cadre
     if vies < 1 :
@@ -136,6 +136,7 @@ def draw():
        
         # affichage du nombre de vies
         pyxel.text(5, 60, f"Vies= {vies}", 6)
+        
         
         # blocs 9x2 couleur 8 sur trois lignes
         for n in range(0, len(nmbr_bl)) :
