@@ -35,7 +35,7 @@ def plateau_deplacement(x, y, score):
             x = x - 1
     return x, y
 
-def balle_deplacement(x, y, score) :
+def balle_deplacement(x, y) :
     "mouvement de la balle si elle touche le plateau ou l'un des cotes sauf le bas"
     global xballe, yballe, plateau_x, plateau_y
     y -= yballe
@@ -70,7 +70,7 @@ def balle_deplacement(x, y, score) :
         xballe = xballe
         yballe = yballe
         
-    return x, y, score
+    return x, y
 
 def jeux(jeu, vies) :
     global balle_y
