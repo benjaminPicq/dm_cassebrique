@@ -66,12 +66,12 @@ def balle_deplacement(x, y) :
             yballe = -yballe
             xballe += 0.01
             yballe += 0.01
-            score += 10
     
     else:
         xballe = xballe
         yballe = yballe
-    return x, y, score
+        
+    return x, y
 
 def jeux(jeu, vies) :
     global balle_y
@@ -80,6 +80,12 @@ def jeux(jeu, vies) :
         jeu = False
     return jeu, vies
 
+def points(score) :
+    global blocsx, blocsy
+    for n in range(0, len(nmbr_bl)) :
+        if blocsx[n] <= x <= (blocsx[n] + 12) and blocsy[n] <= y <= (blocsy[n] + 5) :
+            score += 10
+    return score
 # =========================================================
 # == UPDATE
 # =========================================================
@@ -89,8 +95,11 @@ def update():
     global plateau_x, plateau_y, balle_x, balle_y, jeu, vies, score
     
     jeu, vies = jeux(jeu, vies)
+    
     # mise à jour de la position du plateau
     plateau_x, plateau_y = plateau_deplacement(plateau_x, plateau_y)
+    
+    score = points(score)
     
     # si le joueuer n'a pas commence a jouer ou s'il a perdu une vie
     if jeu == False :
