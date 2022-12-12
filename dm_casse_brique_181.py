@@ -135,7 +135,9 @@ def draw():
         pyxel.circ(balle_x, balle_y, 3, 10)
        
         # affichage du nombre de vies
-        pyxel.text(5, 4, f"Vies: {vies}", 11)
+        pyxel.text(5, 60, f"Vies= {vies}", 6)
+        
+        pyxel.text(5, 66, f"Score= {score}", 6)
         
         # blocs 9x2 couleur 8 sur trois lignes
         for n in range(0, len(nmbr_bl)) :
