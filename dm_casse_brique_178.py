@@ -112,7 +112,7 @@ def draw():
     pyxel.cls(0)
     
     if jeu == False :
-        pyxel.text(50, 64, 'PRESS SPACE TO START', 11)
+        pyxel.text(20, 64, 'PRESS SPACE TO START', 11)
         
     # si la balle sort su cadre
     if vies < 1 :
