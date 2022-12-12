@@ -64,7 +64,6 @@ def balle_deplacement(x, y) :
             c.pop(0)
             nmbr_bl.pop(0)
             yballe = -yballe
-            score += 10
             xballe += 0.01
             yballe += 0.01
     
@@ -79,6 +78,11 @@ def jeux(jeu, vies) :
         vies -= 1
         jeu = False
     return jeu, vies
+
+def points(score) :
+    for n in range(0, len(nmbr_bl)) :
+        if blocsx[n] <= x <= (blocsx[n] + 12) and blocsy[n] <= y <= (blocsy[n] + 5) :
+            score += 10
 # =========================================================
 # == UPDATE
 # =========================================================
@@ -88,6 +92,7 @@ def update():
     global plateau_x, plateau_y, balle_x, balle_y, jeu, vies
     
     jeu, vies = jeux(jeu, vies)
+    score = points(score)
     # mise à jour de la position du plateau
     plateau_x, plateau_y = plateau_deplacement(plateau_x, plateau_y)
     
