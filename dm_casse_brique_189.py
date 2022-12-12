@@ -62,9 +62,8 @@ def balle_deplacement(x, y) :
             blocsy.pop(n)
             c.pop(0)
             nmbr_bl.pop(0)
-            yballe = -yballe
+            yballe = (-yballe + 0.05)
             xballe += 0.05
-            yballe += 0.05
 
     else:
         xballe = xballe
